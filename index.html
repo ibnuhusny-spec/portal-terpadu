@@ -42,8 +42,11 @@
         </p>
       </div>
       <div class="md:w-1/2">
-        <div class="w-full h-72 bg-white/40 backdrop-blur-md rounded-[2rem] border border-white/60 shadow-xl flex items-center justify-center">
-           <span class="text-slate-400 italic">[Ruang Ilustrasi Vektor Karakter Polos]</span>
+        <div class="w-full h-72 bg-white/40 backdrop-blur-md rounded-[2rem] border border-white/60 shadow-xl flex items-center justify-center overflow-hidden">
+           <!-- ========================================== -->
+           <!-- VISUAL JARINGAN EKOSISTEM (KONSEP #4) -->
+           <!-- ========================================== -->
+           <img src="https://rencanaku-pro.vercel.app/portal-visual.png" alt="Jaringan Ekosistem Terpadu" class="w-full h-full object-contain p-4 transition-transform hover:scale-105 duration-500">
         </div>
       </div>
     </header>
@@ -58,7 +61,7 @@
           <p class="text-indigo-100">Portal informasi publik, profil resmi, dan pembaruan kegiatan institut.</p>
         </a>
 
-        <!-- Administrasi & Data -->
+        <!-- Administrasi & Data (Putih) -->
         <a href="https://induk-ku-pro.vercel.app/login.html" target="_blank" class="bg-white rounded-3xl p-6 shadow-sm border border-slate-100 flex flex-col justify-start hover:scale-[1.02] hover:shadow-md transition-all group">
           <h3 class="text-xl font-bold mb-2 text-slate-800 group-hover:text-indigo-600 transition-colors">IndukKu Pro</h3>
           <p class="text-sm text-slate-500">Manajemen terpusat. Kelola data murid aktif hingga rekam jejak alumni.</p>
@@ -74,7 +77,7 @@
           <p class="text-sm text-slate-500">Sistem manajemen jadwal harian terpadu untuk mencegah bentrok kelas.</p>
         </a>
 
-        <!-- Evaluasi & Pencatatan -->
+        <!-- Evaluasi & Pencatatan (Gelap Slate) -->
         <a href="https://sirekap.vercel.app/" target="_blank" class="bg-slate-800 text-white rounded-3xl p-6 shadow-sm flex flex-col justify-start hover:scale-[1.02] hover:shadow-md transition-all group">
           <h3 class="text-xl font-bold mb-2 group-hover:text-slate-300 transition-colors">SiRekap</h3>
           <p class="text-sm text-slate-300">Rekapitulasi terpusat untuk absensi dan penilaian harian.</p>
@@ -90,7 +93,7 @@
           <p class="text-sm text-slate-300">Sistem monitoring kedisiplinan dan pencatatan penghargaan siswa.</p>
         </a>
 
-        <!-- Agama & Gamifikasi -->
+        <!-- Agama & Gamifikasi (Hijau Teal & Amber) -->
         <a href="https://tahfizh-ku-pro.vercel.app/" target="_blank" class="bg-teal-600 text-white rounded-3xl p-6 shadow-sm flex flex-col justify-start hover:scale-[1.02] hover:shadow-md transition-all group">
           <h3 class="text-xl font-bold mb-2 group-hover:text-teal-200 transition-colors">TahfizKu Pro</h3>
           <p class="text-sm text-teal-100">Jurnal digital pemantauan setoran dan hafalan Al-Qur'an.</p>
@@ -116,50 +119,58 @@
 
   </div>
 
-  <!-- MESIN SUPABASE -->
+  <!-- MESIN SUPABASE (V2) -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   
   <script>
     const supabaseUrl = 'https://gquohpkbygzkuybgblmp.supabase.co'; 
-    // MASUKKAN KUNCI PUBLISHABLE ANDA DI BAWAH INI
+    // !!! MASUKKAN KUNCI PUBLISHABLE ANDA DI BAWAH INI !!!
     const supabaseKey = 'sb_publishable_xcOviXGQvu-Ua3U3sRY_wg_AHlCMYMt'; 
     
     const _supabase = supabase.createClient(supabaseUrl, supabaseKey);
 
+    // 1. Pantau Status Login Pengguna (Redirect Pintar)
     _supabase.auth.onAuthStateChange((event, session) => {
       const btnLogin = document.getElementById('btn-login');
       const userProfile = document.getElementById('user-profile');
       
       if (session) {
+        // Jika sedang masuk
         btnLogin.classList.add('hidden');
         userProfile.classList.remove('hidden');
         
+        // Ambil nama dari Google dan buat inisial polos
         const fullName = session.user.user_metadata.full_name || 'Guru';
         const initial = fullName.charAt(0).toUpperCase();
         
         document.getElementById('user-name').innerText = fullName;
         document.getElementById('user-initial').innerText = initial;
       } else {
+        // Jika belum masuk / keluar
         btnLogin.classList.remove('hidden');
         userProfile.classList.add('hidden');
       }
     });
 
+    // 2. Fungsi Masuk
     async function masukDenganGoogle() {
       const { error } = await _supabase.auth.signInWithOAuth({
         provider: 'google',
         options: {
+          // Otomatis kembali ke URL saat ini tanpa pusing alamat pulang
           redirectTo: window.location.origin 
         }
       });
       if (error) console.error("Gagal masuk:", error.message);
     }
 
+    // 3. Fungsi Keluar
     async function keluarSistem() {
       const { error } = await _supabase.auth.signOut();
       if (error) {
         console.error("Gagal keluar:", error.message);
       } else {
+        // Refresh halaman setelah keluar agar kembali bersih
         window.location.reload();
       }
     }
