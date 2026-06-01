@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portal Terpadu - Brosur Digital</title>
-  
+  <title>Portal Terpadu - Gerbang Utama</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
@@ -14,12 +13,24 @@
     <nav class="flex justify-between items-center p-6 max-w-7xl mx-auto">
       <div class="text-2xl font-bold tracking-tight text-slate-700">PortalTerpadu</div>
       
-      <button onclick="masukDenganGoogle()" class="flex items-center gap-2 bg-white px-5 py-2.5 rounded-full shadow-sm hover:shadow-md transition-all border border-slate-200">
-        <svg class="w-5 h-5 text-slate-600" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12.24 10.285V14.4h6.806c-.275 1.765-2.056 5.174-6.806 5.174-4.095 0-7.439-3.389-7.439-7.574s3.345-7.574 7.439-7.574c2.33 0 3.891.989 4.785 1.849l3.254-3.138C18.189 1.186 15.479 0 12.24 0c-6.635 0-12 5.365-12 12s5.365 12 12 12c6.926 0 11.52-4.869 11.52-11.726 0-.788-.085-1.39-.189-1.989H12.24z"/>
-        </svg>
-        <span class="font-medium">Masuk dengan Google</span>
-      </button>
+      <div id="auth-area">
+        <button id="btn-login" onclick="masukDenganGoogle()" class="hidden flex items-center gap-2 bg-white px-5 py-2.5 rounded-full shadow-sm hover:shadow-md transition-all border border-slate-200">
+          <svg class="w-5 h-5 text-slate-600" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12.24 10.285V14.4h6.806c-.275 1.765-2.056 5.174-6.806 5.174-4.095 0-7.439-3.389-7.439-7.574s3.345-7.574 7.439-7.574c2.33 0 3.891.989 4.785 1.849l3.254-3.138C18.189 1.186 15.479 0 12.24 0c-6.635 0-12 5.365-12 12s5.365 12 12 12c6.926 0 11.52-4.869 11.52-11.726 0-.788-.085-1.39-.189-1.989H12.24z"/>
+          </svg>
+          <span class="font-medium">Masuk</span>
+        </button>
+
+        <div id="user-profile" class="hidden flex items-center gap-4 bg-white px-2 py-2 pr-5 rounded-full shadow-sm border border-slate-200">
+          <div class="w-8 h-8 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center font-bold text-sm" id="user-initial">
+            A </div>
+          <span class="font-medium text-sm text-slate-700" id="user-name">Memuat...</span>
+          <div class="w-px h-4 bg-slate-300 mx-1"></div>
+          <button onclick="keluarSistem()" class="text-sm text-red-500 hover:text-red-700 font-medium transition-colors">
+            Keluar
+          </button>
+        </div>
+      </div>
     </nav>
 
     <header class="flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto px-6 py-16 gap-10">
@@ -41,25 +52,25 @@
     <section class="max-w-7xl mx-auto px-6 pb-20">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[200px]">
         
-        <div class="md:col-span-2 bg-white rounded-3xl p-8 shadow-sm border border-slate-100 flex flex-col justify-end hover:scale-[1.02] transition-transform cursor-default">
-          <h3 class="text-2xl font-bold mb-2">Manajemen Terpusat</h3>
-          <p class="text-slate-500">Mulai dari data murid hingga penelusuran alumni dengan presisi.</p>
-        </div>
+        <a href="#" class="md:col-span-2 bg-white rounded-3xl p-8 shadow-sm border border-slate-100 flex flex-col justify-end hover:scale-[1.02] hover:shadow-md transition-all group">
+          <h3 class="text-2xl font-bold mb-2 group-hover:text-indigo-600 transition-colors">IndukKu Pro</h3>
+          <p class="text-slate-500">Manajemen terpusat. Dari data murid hingga penelusuran alumni dengan presisi.</p>
+        </a>
 
-        <div class="bg-indigo-600 text-white rounded-3xl p-8 shadow-sm flex flex-col justify-end hover:scale-[1.02] transition-transform cursor-default">
-          <h3 class="text-2xl font-bold mb-2">Jadwal Dinamis</h3>
-          <p class="text-indigo-100">Pemantauan kelas dan operasional harian tanpa henti.</p>
-        </div>
+        <a href="#" class="bg-indigo-600 text-white rounded-3xl p-8 shadow-sm flex flex-col justify-end hover:scale-[1.02] hover:shadow-md transition-all group">
+          <h3 class="text-2xl font-bold mb-2 group-hover:text-indigo-200 transition-colors">RosterKu Pro</h3>
+          <p class="text-indigo-100">Pemantauan kelas dan operasional jadwal harian tanpa bentrok.</p>
+        </a>
 
-        <div class="bg-white rounded-3xl p-8 shadow-sm border border-slate-100 flex flex-col justify-end hover:scale-[1.02] transition-transform cursor-default">
-          <h3 class="text-2xl font-bold mb-2">Administrasi Cerdas</h3>
-          <p class="text-slate-500">Penyusunan modul otomatis untuk tenaga pendidik.</p>
-        </div>
+        <a href="#" class="bg-white rounded-3xl p-8 shadow-sm border border-slate-100 flex flex-col justify-end hover:scale-[1.02] hover:shadow-md transition-all group">
+          <h3 class="text-2xl font-bold mb-2 group-hover:text-indigo-600 transition-colors">RencanaKu Pro</h3>
+          <p class="text-slate-500">Administrasi cerdas. Penyusunan modul otomatis untuk tenaga pendidik.</p>
+        </a>
 
-        <div class="md:col-span-2 bg-slate-800 text-white rounded-3xl p-8 shadow-sm flex flex-col justify-end hover:scale-[1.02] transition-transform cursor-default">
-          <h3 class="text-2xl font-bold mb-2">Belajar & Bermain</h3>
-          <p class="text-slate-300">Integrasi penuh ke alat gamifikasi interaktif di dalam kelas.</p>
-        </div>
+        <a href="#" class="md:col-span-2 bg-slate-800 text-white rounded-3xl p-8 shadow-sm flex flex-col justify-end hover:scale-[1.02] hover:shadow-md transition-all group">
+          <h3 class="text-2xl font-bold mb-2 group-hover:text-slate-300 transition-colors">Belajar & Bermain</h3>
+          <p class="text-slate-300">Integrasi penuh ke alat gamifikasi dan modul interaktif di dalam kelas.</p>
+        </a>
 
       </div>
     </section>
@@ -73,29 +84,54 @@
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   
   <script>
-    // 1. URL Proyek Anda (Sudah saya masukkan)
     const supabaseUrl = 'https://gquohpkbygzkuybgblmp.supabase.co'; 
-    
-    // 2. Kunci Publishable Anda 
-    // PENTING: Ganti tulisan di bawah dengan KUNCI LENGKAP yang Anda salin tadi!
+    // MASUKKAN KUNCI PUBLISHABLE ANDA DI BAWAH INI
     const supabaseKey = 'sb_publishable_xcOviXGQvu-Ua3U3sRY_wg_AHlCMYMt'; 
     
-    // Inisialisasi Supabase
     const _supabase = supabase.createClient(supabaseUrl, supabaseKey);
 
-    // Fungsi untuk memicu jendela pop-up Google
+    // 1. Pantau Status Login Pengguna
+    _supabase.auth.onAuthStateChange((event, session) => {
+      const btnLogin = document.getElementById('btn-login');
+      const userProfile = document.getElementById('user-profile');
+      
+      if (session) {
+        // Jika sedang masuk
+        btnLogin.classList.add('hidden');
+        userProfile.classList.remove('hidden');
+        
+        // Ambil nama dari Google dan buat inisial polos
+        const fullName = session.user.user_metadata.full_name || 'Guru';
+        const initial = fullName.charAt(0).toUpperCase();
+        
+        document.getElementById('user-name').innerText = fullName;
+        document.getElementById('user-initial').innerText = initial;
+      } else {
+        // Jika belum masuk / keluar
+        btnLogin.classList.remove('hidden');
+        userProfile.classList.add('hidden');
+      }
+    });
+
+    // 2. Fungsi Masuk
     async function masukDenganGoogle() {
-      const { data, error } = await _supabase.auth.signInWithOAuth({
+      const { error } = await _supabase.auth.signInWithOAuth({
         provider: 'google',
         options: {
-          // Arahkan kembali ke Vercel setelah sukses
-          redirectTo: 'https://portal-terpadu.vercel.app/' 
+          redirectTo: window.location.origin // Otomatis kembali ke URL saat ini
         }
       });
+      if (error) console.error("Gagal masuk:", error.message);
+    }
 
+    // 3. Fungsi Keluar
+    async function keluarSistem() {
+      const { error } = await _supabase.auth.signOut();
       if (error) {
-        console.error("Gagal masuk:", error.message);
-        alert("Terjadi kesalahan saat mencoba masuk.");
+        console.error("Gagal keluar:", error.message);
+      } else {
+        // Refresh halaman setelah keluar agar kembali bersih
+        window.location.reload();
       }
     }
   </script>
