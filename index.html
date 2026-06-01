@@ -12,8 +12,13 @@
     
     <!-- Navigasi -->
     <nav class="flex justify-between items-center p-6 max-w-7xl mx-auto">
-      <div class="text-2xl font-bold tracking-tight text-slate-700">PortalTerpadu</div>
+      <!-- Area Logo & Judul -->
+      <div class="flex items-center gap-3">
+        <img src="logo.png" alt="Logo Sekolah" class="w-10 h-10 object-contain drop-shadow-sm">
+        <div class="text-2xl font-bold tracking-tight text-slate-700">PortalTerpadu</div>
+      </div>
       
+      <!-- Area Login / Profil -->
       <div id="auth-area">
         <button id="btn-login" onclick="masukDenganGoogle()" class="hidden flex items-center gap-2 bg-white px-5 py-2.5 rounded-full shadow-sm hover:shadow-md transition-all border border-slate-200">
           <svg class="w-5 h-5 text-slate-600" viewBox="0 0 24 24" fill="currentColor">
@@ -43,10 +48,8 @@
       </div>
       <div class="md:w-1/2">
         <div class="w-full h-72 bg-white/40 backdrop-blur-md rounded-[2rem] border border-white/60 shadow-xl flex items-center justify-center overflow-hidden">
-           <!-- ========================================== -->
-           <!-- VISUAL JARINGAN EKOSISTEM (KONSEP #4) -->
-           <!-- ========================================== -->
-           <img src="https://rencanaku-pro.vercel.app/portal-visual.png" alt="Jaringan Ekosistem Terpadu" class="w-full h-full object-contain p-4 transition-transform hover:scale-105 duration-500">
+           <!-- Gambar Hero (imagehero.png) -->
+           <img src="imagehero.png" alt="Ilustrasi Portal Terpadu" class="w-full h-full object-contain p-2 transition-transform hover:scale-105 duration-700">
         </div>
       </div>
     </header>
@@ -119,7 +122,7 @@
 
   </div>
 
-  <!-- MESIN SUPABASE (V2) -->
+  <!-- MESIN SUPABASE -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   
   <script>
@@ -129,48 +132,40 @@
     
     const _supabase = supabase.createClient(supabaseUrl, supabaseKey);
 
-    // 1. Pantau Status Login Pengguna (Redirect Pintar)
     _supabase.auth.onAuthStateChange((event, session) => {
       const btnLogin = document.getElementById('btn-login');
       const userProfile = document.getElementById('user-profile');
       
       if (session) {
-        // Jika sedang masuk
         btnLogin.classList.add('hidden');
         userProfile.classList.remove('hidden');
         
-        // Ambil nama dari Google dan buat inisial polos
         const fullName = session.user.user_metadata.full_name || 'Guru';
         const initial = fullName.charAt(0).toUpperCase();
         
         document.getElementById('user-name').innerText = fullName;
         document.getElementById('user-initial').innerText = initial;
       } else {
-        // Jika belum masuk / keluar
         btnLogin.classList.remove('hidden');
         userProfile.classList.add('hidden');
       }
     });
 
-    // 2. Fungsi Masuk
     async function masukDenganGoogle() {
       const { error } = await _supabase.auth.signInWithOAuth({
         provider: 'google',
         options: {
-          // Otomatis kembali ke URL saat ini tanpa pusing alamat pulang
           redirectTo: window.location.origin 
         }
       });
       if (error) console.error("Gagal masuk:", error.message);
     }
 
-    // 3. Fungsi Keluar
     async function keluarSistem() {
       const { error } = await _supabase.auth.signOut();
       if (error) {
         console.error("Gagal keluar:", error.message);
       } else {
-        // Refresh halaman setelah keluar agar kembali bersih
         window.location.reload();
       }
     }
