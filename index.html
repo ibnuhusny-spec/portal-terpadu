@@ -10,6 +10,7 @@
 
   <div class="min-h-screen bg-gradient-to-br from-slate-50 to-slate-200 font-sans text-slate-800">
     
+    <!-- Navigasi -->
     <nav class="flex justify-between items-center p-6 max-w-7xl mx-auto">
       <div class="text-2xl font-bold tracking-tight text-slate-700">PortalTerpadu</div>
       
@@ -22,65 +23,100 @@
         </button>
 
         <div id="user-profile" class="hidden flex items-center gap-4 bg-white px-2 py-2 pr-5 rounded-full shadow-sm border border-slate-200">
-          <div class="w-8 h-8 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center font-bold text-sm" id="user-initial">
-            A </div>
+          <div class="w-8 h-8 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center font-bold text-sm" id="user-initial">A</div>
           <span class="font-medium text-sm text-slate-700" id="user-name">Memuat...</span>
           <div class="w-px h-4 bg-slate-300 mx-1"></div>
-          <button onclick="keluarSistem()" class="text-sm text-red-500 hover:text-red-700 font-medium transition-colors">
-            Keluar
-          </button>
+          <button onclick="keluarSistem()" class="text-sm text-red-500 hover:text-red-700 font-medium transition-colors">Keluar</button>
         </div>
       </div>
     </nav>
 
-    <header class="flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto px-6 py-16 gap-10">
+    <!-- Header -->
+    <header class="flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto px-6 py-12 gap-10">
       <div class="md:w-1/2 space-y-6">
         <h1 class="text-5xl font-extrabold leading-tight text-slate-800">
           Harmoni Pendidikan <br> <span class="text-indigo-600">Dalam Satu Pintu.</span>
         </h1>
         <p class="text-lg text-slate-600 leading-relaxed">
-          Selamat datang di ekosistem digital kami. Sebuah ruang di mana administrasi bertemu efisiensi, dan pembelajaran menyatu dengan inovasi.
+          Selamat datang di ekosistem digital terpadu. Akses cepat ke seluruh layanan administrasi, evaluasi, dan inovasi pembelajaran.
         </p>
       </div>
       <div class="md:w-1/2">
-        <div class="w-full h-80 bg-white/40 backdrop-blur-md rounded-[2rem] border border-white/60 shadow-xl flex items-center justify-center">
+        <div class="w-full h-72 bg-white/40 backdrop-blur-md rounded-[2rem] border border-white/60 shadow-xl flex items-center justify-center">
            <span class="text-slate-400 italic">[Ruang Ilustrasi Vektor Karakter Polos]</span>
         </div>
       </div>
     </header>
 
+    <!-- Grid Aplikasi (10 Item) -->
     <section class="max-w-7xl mx-auto px-6 pb-20">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[200px]">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         
-        <a href="#" class="md:col-span-2 bg-white rounded-3xl p-8 shadow-sm border border-slate-100 flex flex-col justify-end hover:scale-[1.02] hover:shadow-md transition-all group">
-          <h3 class="text-2xl font-bold mb-2 group-hover:text-indigo-600 transition-colors">IndukKu Pro</h3>
-          <p class="text-slate-500">Manajemen terpusat. Dari data murid hingga penelusuran alumni dengan presisi.</p>
+        <!-- Web Sekolah (Utama) -->
+        <a href="https://sdit-qurratu-ayun-maros.vercel.app/" target="_blank" class="lg:col-span-3 bg-indigo-600 text-white rounded-3xl p-8 shadow-sm flex flex-col justify-end hover:scale-[1.01] hover:shadow-md transition-all group">
+          <h3 class="text-3xl font-bold mb-2 group-hover:text-indigo-200 transition-colors">Web Profil Sekolah</h3>
+          <p class="text-indigo-100">Portal informasi publik, profil resmi, dan pembaruan kegiatan institut.</p>
         </a>
 
-        <a href="#" class="bg-indigo-600 text-white rounded-3xl p-8 shadow-sm flex flex-col justify-end hover:scale-[1.02] hover:shadow-md transition-all group">
-          <h3 class="text-2xl font-bold mb-2 group-hover:text-indigo-200 transition-colors">RosterKu Pro</h3>
-          <p class="text-indigo-100">Pemantauan kelas dan operasional jadwal harian tanpa bentrok.</p>
+        <!-- Administrasi & Data -->
+        <a href="https://induk-ku-pro.vercel.app/login.html" target="_blank" class="bg-white rounded-3xl p-6 shadow-sm border border-slate-100 flex flex-col justify-start hover:scale-[1.02] hover:shadow-md transition-all group">
+          <h3 class="text-xl font-bold mb-2 text-slate-800 group-hover:text-indigo-600 transition-colors">IndukKu Pro</h3>
+          <p class="text-sm text-slate-500">Manajemen terpusat. Kelola data murid aktif hingga rekam jejak alumni.</p>
         </a>
 
-        <a href="#" class="bg-white rounded-3xl p-8 shadow-sm border border-slate-100 flex flex-col justify-end hover:scale-[1.02] hover:shadow-md transition-all group">
-          <h3 class="text-2xl font-bold mb-2 group-hover:text-indigo-600 transition-colors">RencanaKu Pro</h3>
-          <p class="text-slate-500">Administrasi cerdas. Penyusunan modul otomatis untuk tenaga pendidik.</p>
+        <a href="https://rencanaku-pro.vercel.app/" target="_blank" class="bg-white rounded-3xl p-6 shadow-sm border border-slate-100 flex flex-col justify-start hover:scale-[1.02] hover:shadow-md transition-all group">
+          <h3 class="text-xl font-bold mb-2 text-slate-800 group-hover:text-indigo-600 transition-colors">RencanaKu Pro</h3>
+          <p class="text-sm text-slate-500">Administrasi cerdas. Penyusunan modul dan rencana pelaksanaan pembelajaran otomatis.</p>
         </a>
 
-        <a href="#" class="md:col-span-2 bg-slate-800 text-white rounded-3xl p-8 shadow-sm flex flex-col justify-end hover:scale-[1.02] hover:shadow-md transition-all group">
-          <h3 class="text-2xl font-bold mb-2 group-hover:text-slate-300 transition-colors">Belajar & Bermain</h3>
-          <p class="text-slate-300">Integrasi penuh ke alat gamifikasi dan modul interaktif di dalam kelas.</p>
+        <a href="https://roster-sd-admin.vercel.app/" target="_blank" class="bg-white rounded-3xl p-6 shadow-sm border border-slate-100 flex flex-col justify-start hover:scale-[1.02] hover:shadow-md transition-all group">
+          <h3 class="text-xl font-bold mb-2 text-slate-800 group-hover:text-indigo-600 transition-colors">RosterKu Pro</h3>
+          <p class="text-sm text-slate-500">Sistem manajemen jadwal harian terpadu untuk mencegah bentrok kelas.</p>
+        </a>
+
+        <!-- Evaluasi & Pencatatan -->
+        <a href="https://sirekap.vercel.app/" target="_blank" class="bg-slate-800 text-white rounded-3xl p-6 shadow-sm flex flex-col justify-start hover:scale-[1.02] hover:shadow-md transition-all group">
+          <h3 class="text-xl font-bold mb-2 group-hover:text-slate-300 transition-colors">SiRekap</h3>
+          <p class="text-sm text-slate-300">Rekapitulasi terpusat untuk absensi dan penilaian harian.</p>
+        </a>
+
+        <a href="https://soal-ku-pro-five.vercel.app/" target="_blank" class="bg-slate-800 text-white rounded-3xl p-6 shadow-sm flex flex-col justify-start hover:scale-[1.02] hover:shadow-md transition-all group">
+          <h3 class="text-xl font-bold mb-2 group-hover:text-slate-300 transition-colors">SoalKu Pro</h3>
+          <p class="text-sm text-slate-300">Bank soal digital dan sistem manajemen evaluasi ujian.</p>
+        </a>
+
+        <a href="https://poinqa.vercel.app/" target="_blank" class="bg-slate-800 text-white rounded-3xl p-6 shadow-sm flex flex-col justify-start hover:scale-[1.02] hover:shadow-md transition-all group">
+          <h3 class="text-xl font-bold mb-2 group-hover:text-slate-300 transition-colors">PoinKu Pro</h3>
+          <p class="text-sm text-slate-300">Sistem monitoring kedisiplinan dan pencatatan penghargaan siswa.</p>
+        </a>
+
+        <!-- Agama & Gamifikasi -->
+        <a href="https://tahfizh-ku-pro.vercel.app/" target="_blank" class="bg-teal-600 text-white rounded-3xl p-6 shadow-sm flex flex-col justify-start hover:scale-[1.02] hover:shadow-md transition-all group">
+          <h3 class="text-xl font-bold mb-2 group-hover:text-teal-200 transition-colors">TahfizKu Pro</h3>
+          <p class="text-sm text-teal-100">Jurnal digital pemantauan setoran dan hafalan Al-Qur'an.</p>
+        </a>
+
+        <a href="https://ramadanku.vercel.app/" target="_blank" class="bg-teal-600 text-white rounded-3xl p-6 shadow-sm flex flex-col justify-start hover:scale-[1.02] hover:shadow-md transition-all group">
+          <h3 class="text-xl font-bold mb-2 group-hover:text-teal-200 transition-colors">Amaliah Ramadan OnLine</h3>
+          <p class="text-sm text-teal-100">Pencatatan kegiatan ibadah dan amaliah selama bulan suci.</p>
+        </a>
+
+        <a href="https://jawarasusunkata.vercel.app/" target="_blank" class="bg-amber-500 text-white rounded-3xl p-6 shadow-sm flex flex-col justify-start hover:scale-[1.02] hover:shadow-md transition-all group">
+          <h3 class="text-xl font-bold mb-2 group-hover:text-amber-100 transition-colors">Jawara Susun Kata</h3>
+          <p class="text-sm text-amber-50">Alat gamifikasi interaktif untuk melatih kebahasaan siswa.</p>
         </a>
 
       </div>
     </section>
 
+    <!-- Footer -->
     <footer class="text-center py-8 text-sm text-slate-400 font-mono">
       &copy; 2026. System by 0Akiki011
     </footer>
 
   </div>
 
+  <!-- MESIN SUPABASE -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   
   <script>
@@ -90,47 +126,40 @@
     
     const _supabase = supabase.createClient(supabaseUrl, supabaseKey);
 
-    // 1. Pantau Status Login Pengguna
     _supabase.auth.onAuthStateChange((event, session) => {
       const btnLogin = document.getElementById('btn-login');
       const userProfile = document.getElementById('user-profile');
       
       if (session) {
-        // Jika sedang masuk
         btnLogin.classList.add('hidden');
         userProfile.classList.remove('hidden');
         
-        // Ambil nama dari Google dan buat inisial polos
         const fullName = session.user.user_metadata.full_name || 'Guru';
         const initial = fullName.charAt(0).toUpperCase();
         
         document.getElementById('user-name').innerText = fullName;
         document.getElementById('user-initial').innerText = initial;
       } else {
-        // Jika belum masuk / keluar
         btnLogin.classList.remove('hidden');
         userProfile.classList.add('hidden');
       }
     });
 
-    // 2. Fungsi Masuk
     async function masukDenganGoogle() {
       const { error } = await _supabase.auth.signInWithOAuth({
         provider: 'google',
         options: {
-          redirectTo: window.location.origin // Otomatis kembali ke URL saat ini
+          redirectTo: window.location.origin 
         }
       });
       if (error) console.error("Gagal masuk:", error.message);
     }
 
-    // 3. Fungsi Keluar
     async function keluarSistem() {
       const { error } = await _supabase.auth.signOut();
       if (error) {
         console.error("Gagal keluar:", error.message);
       } else {
-        // Refresh halaman setelah keluar agar kembali bersih
         window.location.reload();
       }
     }
