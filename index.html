@@ -127,15 +127,20 @@
   <script>
     const supabaseUrl = 'https://gquohpkbygzkuybgblmp.supabase.co'; 
     // !!! MASUKKAN KUNCI PUBLISHABLE ANDA DI BAWAH INI !!!
-    const supabaseKey = 'sb_publishable_xcOviXGQvu-Ua3U3sRY_wg_AHlCMYMt'; 
+    const supabaseKey = 'MASUKKAN_KUNCI_ANDA_DI_SINI'; 
     
     const _supabase = supabase.createClient(supabaseUrl, supabaseKey);
+
+    // Variabel Penanda Status Login
+    let isUserLoggedIn = false;
 
     _supabase.auth.onAuthStateChange((event, session) => {
       const btnLogin = document.getElementById('btn-login');
       const userProfile = document.getElementById('user-profile');
       
       if (session) {
+        // Jika sedang masuk
+        isUserLoggedIn = true;
         btnLogin.classList.add('hidden');
         userProfile.classList.remove('hidden');
         
@@ -145,8 +150,23 @@
         document.getElementById('user-name').innerText = fullName;
         document.getElementById('user-initial').innerText = initial;
       } else {
+        // Jika belum masuk
+        isUserLoggedIn = false;
         btnLogin.classList.remove('hidden');
         userProfile.classList.add('hidden');
+      }
+    });
+
+    // MENGUNCI SEMUA TAUTAN APLIKASI
+    // Kita pantau semua klik yang terjadi di dalam halaman
+    document.addEventListener('click', function(e) {
+      // Periksa apakah yang diklik adalah tautan (tag <a>) atau bagian di dalamnya
+      const clickedLink = e.target.closest('a');
+      
+      // Jika itu adalah tautan menuju aplikasi Vercel Anda, dan pengguna belum login
+      if (clickedLink && clickedLink.href.includes('.vercel.app') && !isUserLoggedIn) {
+        e.preventDefault(); // Batalkan aksi membuka tab baru
+        alert("🔒 AKSES TERKUNCI!\n\nSilakan klik tombol 'Masuk' menggunakan akun Google Anda di pojok kanan atas terlebih dahulu untuk membuka aplikasi.");
       }
     });
 
