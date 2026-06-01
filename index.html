@@ -157,16 +157,36 @@
       }
     });
 
-    // MENGUNCI SEMUA TAUTAN APLIKASI
-    // Kita pantau semua klik yang terjadi di dalam halaman
-    document.addEventListener('click', function(e) {
-      // Periksa apakah yang diklik adalah tautan (tag <a>) atau bagian di dalamnya
-      const clickedLink = e.target.closest('a');
+    // GEMBOK PINTAR & PENGIRIM KUNCI SSO
+    document.addEventListener('click', async function(e) {
+      const clickedCard = e.target.closest('section a');
       
-      // Jika itu adalah tautan menuju aplikasi Vercel Anda, dan pengguna belum login
-      if (clickedLink && clickedLink.href.includes('.vercel.app') && !isUserLoggedIn) {
-        e.preventDefault(); // Batalkan aksi membuka tab baru
-        alert("🔒 AKSES TERKUNCI!\n\nSilakan klik tombol 'Masuk' menggunakan akun Google Anda di pojok kanan atas terlebih dahulu untuk membuka aplikasi.");
+      if (clickedCard) {
+        e.preventDefault(); // Tahan dulu kliknya
+
+        // 1. PENGECUALIAN: Web Sekolah bebas diakses siapa saja
+        if (clickedCard.href.includes('sdit-qurratu-ayun-maros.vercel.app')) {
+          window.open(clickedCard.href, '_blank');
+          return;
+        }
+
+        // 2. Jika aplikasi lain diklik tapi belum login, blokir!
+        if (!isUserLoggedIn) {
+          alert("🔒 AKSES TERKUNCI!\n\nSilakan klik tombol 'Masuk' menggunakan akun Google Anda di pojok kanan atas terlebih dahulu.");
+          return;
+        }
+
+        // 3. Jika sudah login, ambil tiket sesi dari Supabase
+        const { data: { session } } = await _supabase.auth.getSession();
+
+        if (session) {
+          // Tempelkan tiket sakti ke alamat tujuan secara rahasia
+          const targetUrl = new URL(clickedCard.href);
+          targetUrl.hash = `access_token=${session.access_token}&refresh_token=${session.refresh_token}&expires_in=${session.expires_in}&token_type=${session.token_type}`;
+          
+          // Buka pintunya di tab baru
+          window.open(targetUrl.toString(), '_blank');
+        }
       }
     });
 
