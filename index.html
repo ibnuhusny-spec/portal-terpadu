@@ -12,13 +12,11 @@
     
     <!-- Navigasi -->
     <nav class="flex justify-between items-center p-6 max-w-7xl mx-auto">
-      <!-- Area Logo & Judul -->
       <div class="flex items-center gap-3">
         <img src="logo.png" alt="Logo Sekolah" class="w-10 h-10 object-contain drop-shadow-sm">
         <div class="text-2xl font-bold tracking-tight text-slate-700">PortalTerpadu</div>
       </div>
       
-      <!-- Area Login / Profil -->
       <div id="auth-area">
         <button id="btn-login" onclick="masukDenganGoogle()" class="hidden flex items-center gap-2 bg-white px-5 py-2.5 rounded-full shadow-sm hover:shadow-md transition-all border border-slate-200">
           <svg class="w-5 h-5 text-slate-600" viewBox="0 0 24 24" fill="currentColor">
@@ -48,8 +46,8 @@
       </div>
       <div class="md:w-1/2">
         <div class="w-full h-72 bg-white/40 backdrop-blur-md rounded-[2rem] border border-white/60 shadow-xl overflow-hidden">
-   <img src="imagehero.png" alt="Ilustrasi Portal Terpadu" class="w-full h-full object-cover transition-transform hover:scale-105 duration-700">
-</div>
+          <img src="imagehero.png" alt="Ilustrasi Portal Terpadu" class="w-full h-full object-cover transition-transform hover:scale-105 duration-700">
+        </div>
       </div>
     </header>
 
@@ -58,185 +56,136 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         
         <!-- Web Sekolah (Utama) -->
-        <a href="https://sdit-qurratu-ayun-maros.vercel.app/" target="_blank" class="lg:col-span-3 bg-indigo-600 text-white rounded-3xl p-8 shadow-sm flex flex-col justify-end hover:scale-[1.01] hover:shadow-md transition-all group">
+        <a href="https://sdit-qurratu-ayun-maros.vercel.app/" target="_blank" class="lg:col-span-3 bg-indigo-600 text-white rounded-3xl p-8 shadow-sm flex flex-col h-full hover:scale-[1.01] hover:shadow-md transition-all group">
           <h3 class="text-3xl font-bold mb-2 group-hover:text-indigo-200 transition-colors">Web Profil Sekolah</h3>
-          <p class="text-indigo-100">Portal Sistem Informasi & PPDB Online SDIT Qurratu A'yun Al-Islami Maros
-Sebuah platform digital terintegrasi yang dirancang khusus untuk mewujudkan modernisasi administrasi dan transparansi informasi sekolah. Aplikasi ini dilengkapi dengan Content Management System (CMS) mandiri untuk mengelola berita sekolah, publikasi karya siswa, perpustakaan digital (E-Library), hingga Sistem Penerimaan Peserta Didik Baru (PPDB) yang serba otomatis. Solusi cerdas untuk menjembatani komunikasi antara sekolah, wali murid, dan masyarakat secara cepat, tepat, dan profesional.</p>
+          <div class="desc-content line-clamp-3 overflow-hidden transition-all duration-300 text-indigo-100">
+            <p>Portal Sistem Informasi & PPDB Online SDIT Qurratu A'yun Al-Islami Maros. Sebuah platform digital terintegrasi yang dirancang khusus untuk mewujudkan modernisasi administrasi dan transparansi informasi sekolah. Aplikasi ini dilengkapi dengan Content Management System (CMS) mandiri untuk mengelola berita sekolah, publikasi karya siswa, perpustakaan digital (E-Library), hingga Sistem Penerimaan Peserta Didik Baru (PPDB) yang serba otomatis. Solusi cerdas untuk menjembatani komunikasi antara sekolah, wali murid, dan masyarakat secara cepat, tepat, dan profesional.</p>
+          </div>
+          <span onclick="event.preventDefault(); event.stopPropagation(); toggleDesc(this)" class="mt-4 text-sm font-bold text-indigo-200 hover:text-white cursor-pointer z-10 w-max">Baca selengkapnya ⏷</span>
         </a>
 
         <!-- Administrasi & Data (Putih) -->
-        <a href="https://induk-ku-pro.vercel.app/login.html" target="_blank" class="bg-white rounded-3xl p-6 shadow-sm border border-slate-100 flex flex-col justify-start hover:scale-[1.02] hover:shadow-md transition-all group">
+        <a href="https://induk-ku-pro.vercel.app/login.html" target="_blank" class="bg-white rounded-3xl p-6 shadow-sm border border-slate-100 flex flex-col h-full hover:scale-[1.02] hover:shadow-md transition-all group">
           <h3 class="text-xl font-bold mb-2 text-slate-800 group-hover:text-indigo-600 transition-colors">IndukKu Pro</h3>
-          <p class="text-sm text-slate-500">Manajemen Data Siswa 360° dalam Satu Genggaman.
-Tinggalkan cara manual. IndukKu Pro adalah platform administrasi sekolah cerdas berbasis cloud untuk mengelola biodata, rekap nilai, cetak rapor otomatis, hingga pengarsipan dokumen digital secara paperless, cepat, dan aman.</p>
+          <div class="desc-content line-clamp-3 overflow-hidden transition-all duration-300 text-sm text-slate-500">
+            <p>Manajemen Data Siswa 360° dalam Satu Genggaman. Tinggalkan cara manual. IndukKu Pro adalah platform administrasi sekolah cerdas berbasis cloud untuk mengelola biodata, rekap nilai, cetak rapor otomatis, hingga pengarsipan dokumen digital secara paperless, cepat, dan aman.</p>
+          </div>
+          <span onclick="event.preventDefault(); event.stopPropagation(); toggleDesc(this)" class="mt-auto pt-4 text-xs font-bold text-indigo-600 hover:text-indigo-800 cursor-pointer z-10 w-max">Baca selengkapnya ⏷</span>
         </a>
 
-        <a href="https://rencanaku-pro.vercel.app/" target="_blank" class="bg-white rounded-3xl p-6 shadow-sm border border-slate-100 flex flex-col justify-start hover:scale-[1.02] hover:shadow-md transition-all group">
+        <a href="https://rencanaku-pro.vercel.app/" target="_blank" class="bg-white rounded-3xl p-6 shadow-sm border border-slate-100 flex flex-col h-full hover:scale-[1.02] hover:shadow-md transition-all group">
           <h3 class="text-xl font-bold mb-2 text-slate-800 group-hover:text-indigo-600 transition-colors">RencanaKu Pro</h3>
-          <p class="text-sm text-slate-500">RencanaKu Pro adalah asisten cerdas berbasis AI yang dirancang khusus untuk mempermudah pendidik dalam menyusun Rencana Pembelajaran Mendalam (Deep Learning Plan) secara otomatis. Hanya dengan beberapa klik, aplikasi ini menghasilkan Modul Ajar, instrumen evaluasi, rubrik penilaian, hingga materi bacaan yang tersusun rapi, terintegrasi cloud, dan siap cetak lengkap dengan format kop surat resmi instansi Anda.</p>
+          <div class="desc-content line-clamp-3 overflow-hidden transition-all duration-300 text-sm text-slate-500">
+            <p>RencanaKu Pro adalah asisten cerdas berbasis AI yang dirancang khusus untuk mempermudah pendidik dalam menyusun Rencana Pembelajaran Mendalam (Deep Learning Plan) secara otomatis. Hanya dengan beberapa klik, aplikasi ini menghasilkan Modul Ajar, instrumen evaluasi, rubrik penilaian, hingga materi bacaan yang tersusun rapi, terintegrasi cloud, dan siap cetak lengkap dengan format kop surat resmi instansi Anda.</p>
+          </div>
+          <span onclick="event.preventDefault(); event.stopPropagation(); toggleDesc(this)" class="mt-auto pt-4 text-xs font-bold text-indigo-600 hover:text-indigo-800 cursor-pointer z-10 w-max">Baca selengkapnya ⏷</span>
         </a>
 
-        <a href="https://roster-sd-admin.vercel.app/" target="_blank" class="bg-white rounded-3xl p-6 shadow-sm border border-slate-100 flex flex-col justify-start hover:scale-[1.02] hover:shadow-md transition-all group">
+        <a href="https://roster-sd-admin.vercel.app/" target="_blank" class="bg-white rounded-3xl p-6 shadow-sm border border-slate-100 flex flex-col h-full hover:scale-[1.02] hover:shadow-md transition-all group">
           <h3 class="text-xl font-bold mb-2 text-slate-800 group-hover:text-indigo-600 transition-colors">RosterKu Pro</h3>
-          <p class="text-sm text-slate-500">RosterKu Pro adalah aplikasi manajemen jadwal pelajaran otomatis yang dirancang khusus untuk mempermudah tugas administrasi sekolah. Dilengkapi dengan sistem pendeteksi bentrok cerdas, aplikasi ini menjamin penyusunan roster harian—bahkan hingga siklus 12 jam pelajaran—berjalan dengan cepat, rapi, dan akurat untuk berbagai kelas sekaligus. Tinggalkan kerumitan cara manual, dan tingkatkan efisiensi manajemen waktu sekolah Anda dalam satu genggaman!</p>
+          <div class="desc-content line-clamp-3 overflow-hidden transition-all duration-300 text-sm text-slate-500">
+            <p>RosterKu Pro adalah aplikasi manajemen jadwal pelajaran otomatis yang dirancang khusus untuk mempermudah tugas administrasi sekolah. Dilengkapi dengan sistem pendeteksi bentrok cerdas, aplikasi ini menjamin penyusunan roster harian—bahkan hingga siklus 12 jam pelajaran—berjalan dengan cepat, rapi, dan akurat untuk berbagai kelas sekaligus. Tinggalkan kerumitan cara manual, dan tingkatkan efisiensi manajemen waktu sekolah Anda dalam satu genggaman!</p>
+          </div>
+          <span onclick="event.preventDefault(); event.stopPropagation(); toggleDesc(this)" class="mt-auto pt-4 text-xs font-bold text-indigo-600 hover:text-indigo-800 cursor-pointer z-10 w-max">Baca selengkapnya ⏷</span>
         </a>
 
-        <a href="https://lms-ku-pro.vercel.app" class="bg-slate-800 text-white rounded-3xl p-6 shadow-sm flex flex-col justify-start hover:scale-[1.02] hover:shadow-md transition-all group">
-  <h3 class="text-xl font-bold mb-4 group-hover:text-slate-300 transition-colors">LMSKu Pro</h3>
-  
-  <div class="text-sm text-slate-300">
-    <p class="font-bold text-white mb-3">
-      LMSKU PRO: Solusi Cerdas Kelas Virtual Anda
-    </p>
-    
-    <ul class="list-disc pl-5 space-y-3 leading-relaxed">
-      <li class="pl-1">
-        🎓 <strong class="text-white">Manajemen Kelas Terpadu:</strong> Undang siswa mudah dengan QR Code & WhatsApp, serta dukung kolaborasi multi-guru.
-      </li>
-      <li class="pl-1">
-        🔒 <strong class="text-white">Ujian Anti-Curang:</strong> Layar terkunci (<em>fullscreen lock</em>), pelacakan tab, dan navigasi wajib jawab.
-      </li>
-      <li class="pl-1">
-        ⚡ <strong class="text-white">Evaluasi Pintar:</strong> Koreksi otomatis untuk soal objektif & fleksibilitas unggah foto/audio untuk ujian esai.
-      </li>
-      <li class="pl-1">
-        🇸🇦 <strong class="text-white">Ramah Linguistik Arab:</strong> Integrasi <em>font</em> khusus yang memastikan harakat dan tata letak bahasa Arab tampil sempurna.
-      </li>
-      <li class="pl-1">
-        🏆 <strong class="text-white">Interaktif & Memotivasi:</strong> Dilengkapi forum diskusi <em>real-time</em> dan papan peringkat (Top 10) siswa.
-      </li>
-    </ul>
-  </div>
-</a>
+        <a href="https://lms-ku-pro.vercel.app" class="bg-slate-800 text-white rounded-3xl p-6 shadow-sm flex flex-col h-full hover:scale-[1.02] hover:shadow-md transition-all group">
+          <h3 class="text-xl font-bold mb-4 group-hover:text-slate-300 transition-colors">LMSKu Pro</h3>
+          <div class="desc-content line-clamp-3 overflow-hidden transition-all duration-300 text-sm text-slate-300">
+            <p class="font-bold text-white mb-3">LMSKU PRO: Solusi Cerdas Kelas Virtual Anda</p>
+            <ul class="list-disc pl-5 space-y-3 leading-relaxed">
+              <li class="pl-1">🎓 <strong class="text-white">Manajemen Kelas Terpadu:</strong> Undang siswa mudah dengan QR Code & WhatsApp, serta dukung kolaborasi multi-guru.</li>
+              <li class="pl-1">🔒 <strong class="text-white">Ujian Anti-Curang:</strong> Layar terkunci (<em>fullscreen lock</em>), pelacakan tab, dan navigasi wajib jawab.</li>
+              <li class="pl-1">⚡ <strong class="text-white">Evaluasi Pintar:</strong> Koreksi otomatis untuk soal objektif & fleksibilitas unggah foto/audio untuk ujian esai.</li>
+              <li class="pl-1">🇸🇦 <strong class="text-white">Ramah Linguistik Arab:</strong> Integrasi <em>font</em> khusus yang memastikan harakat dan tata letak bahasa Arab tampil sempurna.</li>
+              <li class="pl-1">🏆 <strong class="text-white">Interaktif & Memotivasi:</strong> Dilengkapi forum diskusi <em>real-time</em> dan papan peringkat (Top 10) siswa.</li>
+            </ul>
+          </div>
+          <span onclick="event.preventDefault(); event.stopPropagation(); toggleDesc(this)" class="mt-auto pt-4 text-xs font-bold text-indigo-400 hover:text-indigo-300 cursor-pointer z-10 w-max">Baca selengkapnya ⏷</span>
+        </a>
 
         <!-- Evaluasi & Pencatatan (Gelap Slate) -->
-        <a href="https://sirekap.vercel.app/" target="_blank" class="bg-slate-800 text-white rounded-3xl p-6 shadow-sm flex flex-col justify-start hover:scale-[1.02] hover:shadow-md transition-all group">
+        <a href="https://sirekap.vercel.app/" target="_blank" class="bg-slate-800 text-white rounded-3xl p-6 shadow-sm flex flex-col h-full hover:scale-[1.02] hover:shadow-md transition-all group">
           <h3 class="text-xl font-bold mb-2 group-hover:text-slate-300 transition-colors">SiRekap</h3>
-          <p class="text-sm text-slate-300">SIREKAP adalah aplikasi berbasis web mutakhir yang dirancang untuk menyederhanakan pelaporan Kegiatan Belajar Mengajar (KBM) dan administrasi ujian. Melalui antarmuka yang modern dan responsif, guru dapat merekam jurnal harian secara real-time dari perangkat masing-masing. Terintegrasi penuh dengan Cloud Database, sistem ini tidak hanya mengamankan data, tetapi juga mengakumulasi jam mengajar dan mengkalkulasi rekapitulasi honorarium secara otomatis, presisi, dan transparan.</p>
+          <div class="desc-content line-clamp-3 overflow-hidden transition-all duration-300 text-sm text-slate-300">
+            <p>SIREKAP adalah aplikasi berbasis web mutakhir yang dirancang untuk menyederhanakan pelaporan Kegiatan Belajar Mengajar (KBM) dan administrasi ujian. Melalui antarmuka yang modern dan responsif, guru dapat merekam jurnal harian secara real-time dari perangkat masing-masing. Terintegrasi penuh dengan Cloud Database, sistem ini tidak hanya mengamankan data, tetapi juga mengakumulasi jam mengajar dan mengkalkulasi rekapitulasi honorarium secara otomatis, presisi, dan transparan.</p>
+          </div>
+          <span onclick="event.preventDefault(); event.stopPropagation(); toggleDesc(this)" class="mt-auto pt-4 text-xs font-bold text-indigo-400 hover:text-indigo-300 cursor-pointer z-10 w-max">Baca selengkapnya ⏷</span>
         </a>
 
-        <a href="https://soal-ku-pro.vercel.app/" target="_blank" class="bg-slate-800 text-white rounded-3xl p-6 shadow-sm flex flex-col justify-start hover:scale-[1.02] hover:shadow-md transition-all group">
+        <a href="https://soal-ku-pro.vercel.app/" target="_blank" class="bg-slate-800 text-white rounded-3xl p-6 shadow-sm flex flex-col h-full hover:scale-[1.02] hover:shadow-md transition-all group">
           <h3 class="text-xl font-bold mb-2 group-hover:text-slate-300 transition-colors">SoalKu Pro</h3>
-          <p class="text-sm text-slate-300">SoalKu Pro adalah asisten digital cerdas berbasis AI yang dirancang untuk merevolusi cara pendidik menyusun instrumen evaluasi. Hanya dalam hitungan detik, aplikasi web ini secara otomatis merancang paket soal, kunci jawaban, dan kisi-kisi yang disesuaikan dengan kurikulum serta level kognitif (C1-C6). Dengan fitur unggulan seperti pencarian ilustrasi gambar otomatis, mode kuis interaktif untuk presentasi di kelas, hingga ekspor dokumen Microsoft Word siap cetak yang mendukung teks Arab berharakat dan penyisipan Kop Surat sekolah, SoalKu Pro hadir untuk membebaskan Anda dari kerumitan administrasi. Fokuslah mengajar, dan biarkan SoalKu Pro yang menyusun evaluasinya!</p>
+          <div class="desc-content line-clamp-3 overflow-hidden transition-all duration-300 text-sm text-slate-300">
+            <p>SoalKu Pro adalah asisten digital cerdas berbasis AI yang dirancang untuk merevolusi cara pendidik menyusun instrumen evaluasi. Hanya dalam hitungan detik, aplikasi web ini secara otomatis merancang paket soal, kunci jawaban, dan kisi-kisi yang disesuaikan dengan kurikulum serta level kognitif (C1-C6). Dengan fitur unggulan seperti pencarian ilustrasi gambar otomatis, mode kuis interaktif untuk presentasi di kelas, hingga ekspor dokumen Microsoft Word siap cetak yang mendukung teks Arab berharakat dan penyisipan Kop Surat sekolah, SoalKu Pro hadir untuk membebaskan Anda dari kerumitan administrasi. Fokuslah mengajar, dan biarkan SoalKu Pro yang menyusun evaluasinya!</p>
+          </div>
+          <span onclick="event.preventDefault(); event.stopPropagation(); toggleDesc(this)" class="mt-auto pt-4 text-xs font-bold text-indigo-400 hover:text-indigo-300 cursor-pointer z-10 w-max">Baca selengkapnya ⏷</span>
         </a>
 
-        <a href="https://poinqa.vercel.app/" target="_blank" class="bg-slate-800 text-white rounded-3xl p-6 shadow-sm flex flex-col justify-start hover:scale-[1.02] hover:shadow-md transition-all group">
-  
-  <!-- Judul Utama -->
-  <h3 class="text-xl font-bold mb-4 group-hover:text-slate-300 transition-colors border-b border-slate-700 pb-2">
-    PoinKu Pro
-  </h3>
-  
-  <!-- Paragraf Pembuka -->
-  <p class="text-sm text-slate-300 mb-4 leading-relaxed">
-    <strong class="text-white block mb-1">Membangun Generasi Disiplin dan Rajin Ibadah dengan POINKU PRO</strong>
-    POINKU PRO hadir sebagai solusi digital administrasi kelas yang modern dan praktis. Aplikasi ini menjembatani komunikasi antara guru dan wali murid dalam membentuk pembiasaan positif siswa sejak dini. Sangat ideal untuk mendukung ekosistem pendidikan dasar yang mengedepankan pemantauan akhlak dan ibadah harian.
-  </p>
-
-  <!-- Sub-judul Keunggulan -->
-  <p class="text-sm font-bold text-white mb-3">
-    Keunggulan Utama POINKU PRO:
-  </p>
-  
-  <!-- Daftar Keunggulan (List) -->
-  <ul class="list-disc pl-5 text-sm text-slate-300 space-y-2.5 leading-relaxed">
-    <li>
-      <strong class="text-slate-200">Akses Instan Magic Link:</strong> Orang tua tidak perlu repot mengunduh aplikasi atau menghafal password. Cukup satu klik dari WhatsApp, profil anak langsung terbuka.
-    </li>
-    <li>
-      <strong class="text-slate-200">Laporan Salat & Adab Real-Time:</strong> Mudahkan pencatatan kedisiplinan (poin positif/negatif) dan laporan Salat 5 Waktu harian secara interaktif.
-    </li>
-    <li>
-      <strong class="text-slate-200">Teknologi Sinkronisasi Anti-Tabrakan:</strong> Dibekali sistem Atomic Sync cerdas, menjamin data tetap utuh dan akurat meski diakses puluhan orang tua di detik yang bersamaan.
-    </li>
-    <li>
-      <strong class="text-slate-200">Database Mandiri & Cepat:</strong> Menggunakan integrasi Google Sheets per kelas agar aplikasi tetap sangat ringan tanpa batasan kapasitas.
-    </li>
-    <li>
-      <strong class="text-slate-200">Rekap Rapor Satu Klik:</strong> Membantu guru mencetak laporan akumulasi poin ke dalam format Excel secara otomatis, siap cetak lengkap dengan identitas sekolah.
-    </li>
-  </ul>
-
-</a>
+        <a href="https://poinqa.vercel.app/" target="_blank" class="bg-slate-800 text-white rounded-3xl p-6 shadow-sm flex flex-col h-full hover:scale-[1.02] hover:shadow-md transition-all group">
+          <h3 class="text-xl font-bold mb-4 group-hover:text-slate-300 transition-colors border-b border-slate-700 pb-2">PoinKu Pro</h3>
+          <div class="desc-content line-clamp-3 overflow-hidden transition-all duration-300 text-sm text-slate-300 leading-relaxed">
+            <p class="mb-4">
+              <strong class="text-white block mb-1">Membangun Generasi Disiplin dan Rajin Ibadah dengan POINKU PRO</strong>
+              POINKU PRO hadir sebagai solusi digital administrasi kelas yang modern dan praktis. Aplikasi ini menjembatani komunikasi antara guru dan wali murid dalam membentuk pembiasaan positif siswa sejak dini. Sangat ideal untuk mendukung ekosistem pendidikan dasar yang mengedepankan pemantauan akhlak dan ibadah harian.
+            </p>
+            <p class="font-bold text-white mb-3">Keunggulan Utama POINKU PRO:</p>
+            <ul class="list-disc pl-5 space-y-2.5">
+              <li><strong class="text-slate-200">Akses Instan Magic Link:</strong> Orang tua tidak perlu repot mengunduh aplikasi atau menghafal password. Cukup satu klik dari WhatsApp, profil anak langsung terbuka.</li>
+              <li><strong class="text-slate-200">Laporan Salat & Adab Real-Time:</strong> Mudahkan pencatatan kedisiplinan (poin positif/negatif) dan laporan Salat 5 Waktu harian secara interaktif.</li>
+              <li><strong class="text-slate-200">Teknologi Sinkronisasi Anti-Tabrakan:</strong> Dibekali sistem Atomic Sync cerdas, menjamin data tetap utuh dan akurat meski diakses puluhan orang tua di detik yang bersamaan.</li>
+              <li><strong class="text-slate-200">Database Mandiri & Cepat:</strong> Menggunakan integrasi Google Sheets per kelas agar aplikasi tetap sangat ringan tanpa batasan kapasitas.</li>
+              <li><strong class="text-slate-200">Rekap Rapor Satu Klik:</strong> Membantu guru mencetak laporan akumulasi poin ke dalam format Excel secara otomatis, siap cetak lengkap dengan identitas sekolah.</li>
+            </ul>
+          </div>
+          <span onclick="event.preventDefault(); event.stopPropagation(); toggleDesc(this)" class="mt-auto pt-4 text-xs font-bold text-indigo-400 hover:text-indigo-300 cursor-pointer z-10 w-max">Baca selengkapnya ⏷</span>
+        </a>
 
         <!-- Agama & Gamifikasi (Hijau Teal & Amber) -->
-        <a href="https://tahfizh-ku-pro.vercel.app/" target="_blank" class="bg-teal-600 text-white rounded-3xl p-6 shadow-sm flex flex-col justify-start hover:scale-[1.02] hover:shadow-md transition-all group">
-    <h3 class="text-xl font-bold mb-4 group-hover:text-teal-200 transition-colors">TahfizhKu Pro</h3>
-    
-    <p class="text-sm text-teal-50 mb-3 leading-relaxed text-justify">
-        TahfizhKu Pro adalah platform manajemen hafalan dan evaluasi pembelajaran digital yang dirancang khusus untuk SDIT Qurratu A'yun Al-Islami. Hadir sebagai inovasi <i>paperless</i> dan jembatan interaktif antara sekolah dan rumah, aplikasi ini memastikan perkembangan prestasi ananda terpantau secara transparan dan <i>real-time</i>.
-    </p>
+        <a href="https://tahfizh-ku-pro.vercel.app/" target="_blank" class="bg-teal-600 text-white rounded-3xl p-6 shadow-sm flex flex-col h-full hover:scale-[1.02] hover:shadow-md transition-all group">
+          <h3 class="text-xl font-bold mb-4 group-hover:text-teal-200 transition-colors">TahfizhKu Pro</h3>
+          <div class="desc-content line-clamp-3 overflow-hidden transition-all duration-300 text-sm text-teal-50">
+            <p class="mb-3 leading-relaxed text-justify">
+              TahfizhKu Pro adalah platform manajemen hafalan dan evaluasi pembelajaran digital yang dirancang khusus untuk SDIT Qurratu A'yun Al-Islami. Hadir sebagai inovasi <i>paperless</i> dan jembatan interaktif antara sekolah dan rumah, aplikasi ini memastikan perkembangan prestasi ananda terpantau secara transparan dan <i>real-time</i>.
+            </p>
+            <p class="mb-4 leading-relaxed">Lebih dari sekadar buku mutaba'ah biasa, TahfizhKu Pro dilengkapi berbagai fitur unggulan:</p>
+            <ul class="space-y-3">
+              <li class="flex items-start"><span class="mr-2 text-base">📖</span><span class="leading-relaxed"><strong class="text-white">Pemantauan Terpadu:</strong> Mencatat progres hafalan Al-Qur'an (Ziyadah, Muroja'ah, dan Ujian Tasmi') dengan penilaian mutu yang presisi (Tajwid, Kelancaran, dan Makhraj).</span></li>
+              <li class="flex items-start"><span class="mr-2 text-base">📚</span><span class="leading-relaxed"><strong class="text-white">Multi-Modul:</strong> Mengintegrasikan rekam jejak bimbingan bacaan AISAR, hafalan Hadis/Doa, dan Kosakata Bahasa Arab dalam satu dasbor.</span></li>
+              <li class="flex items-start"><span class="mr-2 text-base">👨‍👩‍👧‍👦</span><span class="leading-relaxed"><strong class="text-white">Portal Orang Tua:</strong> Memudahkan wali murid memantau capaian hafalan anak kapan saja dan di mana saja langsung dari <i>smartphone</i>.</span></li>
+              <li class="flex items-start"><span class="mr-2 text-base">🏆</span><span class="leading-relaxed"><strong class="text-white">Peringkat Edukatif:</strong> Memacu semangat kompetisi positif siswa melalui sistem <i>leaderboard</i> dan pengumpulan poin capaian yang adil.</span></li>
+              <li class="flex items-start"><span class="mr-2 text-base">🎓</span><span class="leading-relaxed"><strong class="text-white">Sertifikat Digital:</strong> Memberikan apresiasi instan berupa sertifikat pencapaian per Juz yang siap diunduh dan dicetak oleh orang tua.</span></li>
+              <li class="flex items-start"><span class="mr-2 text-base">💬</span><span class="leading-relaxed"><strong class="text-white">Komunikasi Interaktif:</strong> Menyediakan "Buku Penghubung" untuk diskusi privat guru-ortu dan "Pesan Siar" untuk pengumuman global sekolah.</span></li>
+            </ul>
+          </div>
+          <span onclick="event.preventDefault(); event.stopPropagation(); toggleDesc(this)" class="mt-auto pt-4 text-xs font-bold text-teal-200 hover:text-white cursor-pointer z-10 w-max">Baca selengkapnya ⏷</span>
+        </a>
 
-    <p class="text-sm text-teal-50 mb-4 leading-relaxed">
-        Lebih dari sekadar buku mutaba'ah biasa, TahfizhKu Pro dilengkapi berbagai fitur unggulan:
-    </p>
+        <a href="https://ramadanku.vercel.app/" target="_blank" class="bg-teal-600 text-white rounded-3xl p-6 shadow-sm flex flex-col h-full hover:scale-[1.02] hover:shadow-md transition-all group">
+          <h3 class="text-2xl font-bold mb-4 group-hover:text-teal-200 transition-colors">Amaliah Ramadan OnLine</h3>
+          <div class="desc-content line-clamp-3 overflow-hidden transition-all duration-300 space-y-4 text-sm text-teal-50 leading-relaxed">
+            <p>
+              <strong class="text-white text-base">Apa itu Buku Amaliah Ramadan OnLine?</strong><br>
+              Buku Amaliah Ramadan OnLine adalah inovasi digital pengganti buku jurnal Ramadan cetak tradisional. Dirancang khusus untuk lingkungan sekolah, aplikasi berbasis Web ini memudahkan siswa dalam mencatat ibadah harian mereka melalui HP, sekaligus memudahkan guru (wali kelas) dalam memantau, memeriksa, dan menilai perkembangan siswa secara real-time. Tanpa perlu mengunduh aplikasi dari PlayStore, semuanya bisa diakses dengan satu klik.
+            </p>
+            <p>
+              <strong class="text-white text-base">🌟 Mengapa Memilih Aplikasi Ini?</strong><br>
+              Aplikasi ini bukan sekadar formulir biasa, melainkan platform cerdas yang dirancang dengan fitur lengkap:
+            </p>
+            <ul class="list-disc pl-5 space-y-2">
+              <li><strong class="text-white">Jurnal Ibadah Interaktif:</strong> Dilengkapi checklist puasa, shalat 5 waktu, tarawih, hingga amalan harian dengan sistem perhitungan poin otomatis (serta pengurangan poin untuk evaluasi sikap).</li>
+              <li><strong class="text-white">Setoran Hafalan Praktis:</strong> Siswa dapat merekam suara hafalan surah atau doa secara langsung dari aplikasi tanpa batasan waktu.</li>
+              <li><strong class="text-white">Galeri Kegiatan Siswa:</strong> Mendukung pengunggahan foto kegiatan positif (seperti membantu orang tua atau tadarus) yang otomatis dikompresi agar hemat kuota dan ruang penyimpanan.</li>
+              <li><strong class="text-white">Dasbor Guru (Teacher Panel):</strong> Guru memiliki satu halaman khusus untuk memantau seluruh siswa kelasnya, memutar rekaman audio secara langsung, melihat foto resolusi tinggi, dan memberikan nilai ekstra beserta catatan motivasi.</li>
+              <li><strong class="text-white">100% Gratis & Mandiri:</strong> Tidak memerlukan biaya langganan server bulanan. Data sekolah sepenuhnya aman karena disimpan secara otomatis di dalam Google Spreadsheet dan Google Drive milik guru masing-masing.</li>
+            </ul>
+            <p class="pt-4 mt-2 border-t border-teal-500/50">
+              Dilengkapi dengan sistem keamanan mutakhir (anti-spam, kunci PIN server, dan validasi data), Buku Amaliah Ramadan OnLine hadir untuk menjadikan pengalaman ibadah siswa di bulan suci lebih menyenangkan, tertib, dan terpantau dengan baik.
+            </p>
+          </div>
+          <span onclick="event.preventDefault(); event.stopPropagation(); toggleDesc(this)" class="mt-auto pt-4 text-xs font-bold text-teal-200 hover:text-white cursor-pointer z-10 w-max">Baca selengkapnya ⏷</span>
+        </a>
 
-    <ul class="text-sm text-teal-100 space-y-3">
-        <li class="flex items-start">
-            <span class="mr-2 text-base">📖</span>
-            <span class="leading-relaxed"><strong class="text-white">Pemantauan Terpadu:</strong> Mencatat progres hafalan Al-Qur'an (Ziyadah, Muroja'ah, dan Ujian Tasmi') dengan penilaian mutu yang presisi (Tajwid, Kelancaran, dan Makhraj).</span>
-        </li>
-        <li class="flex items-start">
-            <span class="mr-2 text-base">📚</span>
-            <span class="leading-relaxed"><strong class="text-white">Multi-Modul:</strong> Mengintegrasikan rekam jejak bimbingan bacaan AISAR, hafalan Hadis/Doa, dan Kosakata Bahasa Arab dalam satu dasbor.</span>
-        </li>
-        <li class="flex items-start">
-            <span class="mr-2 text-base">👨‍👩‍👧‍👦</span>
-            <span class="leading-relaxed"><strong class="text-white">Portal Orang Tua:</strong> Memudahkan wali murid memantau capaian hafalan anak kapan saja dan di mana saja langsung dari <i>smartphone</i>.</span>
-        </li>
-        <li class="flex items-start">
-            <span class="mr-2 text-base">🏆</span>
-            <span class="leading-relaxed"><strong class="text-white">Peringkat Edukatif:</strong> Memacu semangat kompetisi positif siswa melalui sistem <i>leaderboard</i> dan pengumpulan poin capaian yang adil.</span>
-        </li>
-        <li class="flex items-start">
-            <span class="mr-2 text-base">🎓</span>
-            <span class="leading-relaxed"><strong class="text-white">Sertifikat Digital:</strong> Memberikan apresiasi instan berupa sertifikat pencapaian per Juz yang siap diunduh dan dicetak oleh orang tua.</span>
-        </li>
-        <li class="flex items-start">
-            <span class="mr-2 text-base">💬</span>
-            <span class="leading-relaxed"><strong class="text-white">Komunikasi Interaktif:</strong> Menyediakan "Buku Penghubung" untuk diskusi privat guru-ortu dan "Pesan Siar" untuk pengumuman global sekolah.</span>
-        </li>
-    </ul>
-</a>
-
-        <a href="https://ramadanku.vercel.app/" target="_blank" class="bg-teal-600 text-white rounded-3xl p-6 shadow-sm flex flex-col justify-start hover:scale-[1.02] hover:shadow-md transition-all group">
-    
-    <!-- Judul Utama -->
-    <h3 class="text-2xl font-bold mb-4 group-hover:text-teal-200 transition-colors">Amaliah Ramadan OnLine</h3>
-    
-    <!-- Wadah Teks (dengan jarak antar paragraf) -->
-    <div class="space-y-4 text-sm text-teal-50 leading-relaxed">
-        
-        <!-- Paragraf 1 -->
-        <p>
-            <strong class="text-white text-base">Apa itu Buku Amaliah Ramadan OnLine?</strong><br>
-            Buku Amaliah Ramadan OnLine adalah inovasi digital pengganti buku jurnal Ramadan cetak tradisional. Dirancang khusus untuk lingkungan sekolah, aplikasi berbasis Web ini memudahkan siswa dalam mencatat ibadah harian mereka melalui HP, sekaligus memudahkan guru (wali kelas) dalam memantau, memeriksa, dan menilai perkembangan siswa secara real-time. Tanpa perlu mengunduh aplikasi dari PlayStore, semuanya bisa diakses dengan satu klik.
-        </p>
-
-        <!-- Paragraf 2 -->
-        <p>
-            <strong class="text-white text-base">🌟 Mengapa Memilih Aplikasi Ini?</strong><br>
-            Aplikasi ini bukan sekadar formulir biasa, melainkan platform cerdas yang dirancang dengan fitur lengkap:
-        </p>
-
-        <!-- Daftar Fitur (List) -->
-        <ul class="list-disc pl-5 space-y-2">
-            <li><strong class="text-white">Jurnal Ibadah Interaktif:</strong> Dilengkapi checklist puasa, shalat 5 waktu, tarawih, hingga amalan harian dengan sistem perhitungan poin otomatis (serta pengurangan poin untuk evaluasi sikap).</li>
-            <li><strong class="text-white">Setoran Hafalan Praktis:</strong> Siswa dapat merekam suara hafalan surah atau doa secara langsung dari aplikasi tanpa batasan waktu.</li>
-            <li><strong class="text-white">Galeri Kegiatan Siswa:</strong> Mendukung pengunggahan foto kegiatan positif (seperti membantu orang tua atau tadarus) yang otomatis dikompresi agar hemat kuota dan ruang penyimpanan.</li>
-            <li><strong class="text-white">Dasbor Guru (Teacher Panel):</strong> Guru memiliki satu halaman khusus untuk memantau seluruh siswa kelasnya, memutar rekaman audio secara langsung, melihat foto resolusi tinggi, dan memberikan nilai ekstra beserta catatan motivasi.</li>
-            <li><strong class="text-white">100% Gratis & Mandiri:</strong> Tidak memerlukan biaya langganan server bulanan. Data sekolah sepenuhnya aman karena disimpan secara otomatis di dalam Google Spreadsheet dan Google Drive milik guru masing-masing.</li>
-        </ul>
-
-        <!-- Paragraf Penutup (Dengan garis pembatas atas) -->
-        <p class="pt-4 mt-2 border-t border-teal-500/50">
-            Dilengkapi dengan sistem keamanan mutakhir (anti-spam, kunci PIN server, dan validasi data), Buku Amaliah Ramadan OnLine hadir untuk menjadikan pengalaman ibadah siswa di bulan suci lebih menyenangkan, tertib, dan terpantau dengan baik.
-        </p>
-
-    </div>
-</a>
-
-        <a href="https://jawarasusunkata.vercel.app/" target="_blank" class="bg-amber-500 text-white rounded-3xl p-6 shadow-sm flex flex-col justify-start hover:scale-[1.02] hover:shadow-md transition-all group">
+        <a href="https://jawarasusunkata.vercel.app/" target="_blank" class="bg-amber-500 text-white rounded-3xl p-6 shadow-sm flex flex-col h-full hover:scale-[1.02] hover:shadow-md transition-all group">
           <h3 class="text-xl font-bold mb-2 group-hover:text-amber-100 transition-colors">Jawara Susun Kata</h3>
           <p class="text-sm text-amber-50">Alat gamifikasi interaktif untuk melatih kebahasaan siswa.</p>
         </a>
@@ -251,7 +200,6 @@ Tinggalkan cara manual. IndukKu Pro adalah platform administrasi sekolah cerdas 
 
   </div>
 
-  <!-- MESIN SUPABASE -->
   <!-- MESIN SUPABASE (V2) - SOLUSI FINAL ANTI-BLOKIR iPHONE -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   
@@ -331,6 +279,18 @@ Tinggalkan cara manual. IndukKu Pro adalah platform administrasi sekolah cerdas 
         console.error("Gagal keluar:", error.message);
       } else {
         window.location.reload();
+      }
+    }
+
+    // FUNGSI BARU: Untuk membuka/menutup teks panjang tanpa memicu perpindahan halaman
+    function toggleDesc(btnElement) {
+      const content = btnElement.previousElementSibling;
+      if (content.classList.contains('line-clamp-3')) {
+        content.classList.remove('line-clamp-3');
+        btnElement.innerHTML = "Tutup deskripsi ⏶";
+      } else {
+        content.classList.add('line-clamp-3');
+        btnElement.innerHTML = "Baca selengkapnya ⏷";
       }
     }
   </script>
