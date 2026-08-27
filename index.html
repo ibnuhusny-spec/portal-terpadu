@@ -274,40 +274,46 @@
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   
   <script>
-    // URL dan KUNCI ANON SUPABASE RESMI
-    const supabaseUrl = 'https://duyxtgpkzebmhlouwofl.supabase.co'; 
-    const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImR1eXh0Z3BremVibWhsb3V3b2ZsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODcwOTk4OTcsImV4cCI6MjEwMjY3NTg5N30.F_-Uyvm2Vu0eVJBBq8bJ7BGeg7Rn_ZaoHvSvxHqZ3yo';
+    // URL dan KUNCI ANON SUPABASE BARU (PROJECT FRESH)
+    const supabaseUrl = 'https://ncvbbmyycjzdpudoueor.supabase.co'; 
+    const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5jdmJibXl5Y2p6ZHB1ZG91ZW9yIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODc3NzMzOTYsImV4cCI6MjEwMzM0OTM5Nn0.DCo0AZRke_HN-TqDSt8aenKLqGTBzw4d4NNZTy3acJ4';
     
-    const _supabase = supabase.createClient(supabaseUrl, supabaseKey);
-
     let isUserLoggedIn = false;
     let currentSession = null; 
+    let isSupabaseDisabled = false;
+    let _supabase = null;
 
-    // Pantau Status Autentikasi Google
-    _supabase.auth.onAuthStateChange((event, session) => {
-      const btnLogin = document.getElementById('btn-login');
-      const userProfile = document.getElementById('user-profile');
-      
-      if (session) {
-        isUserLoggedIn = true;
-        currentSession = session; 
-        if(btnLogin) btnLogin.classList.add('hidden');
-        if(userProfile) userProfile.classList.remove('hidden');
-        
-        const fullName = session.user?.user_metadata?.full_name || 'Guru';
-        const initial = fullName.charAt(0).toUpperCase();
-        
-        document.getElementById('user-name').innerText = fullName;
-        document.getElementById('user-initial').innerText = initial;
-      } else {
-        isUserLoggedIn = false;
-        currentSession = null; 
-        if(btnLogin) btnLogin.classList.remove('hidden');
-        if(userProfile) userProfile.classList.add('hidden');
-      }
-    });
+    try {
+      _supabase = supabase.createClient(supabaseUrl, supabaseKey);
 
-    // LIST APLIKASI YANG BEBAS DIBUKA TANPA GEMBOK LOGIN SUPABASE
+      _supabase.auth.onAuthStateChange((event, session) => {
+        const btnLogin = document.getElementById('btn-login');
+        const userProfile = document.getElementById('user-profile');
+        
+        if (session) {
+          isUserLoggedIn = true;
+          currentSession = session; 
+          if(btnLogin) btnLogin.classList.add('hidden');
+          if(userProfile) userProfile.classList.remove('hidden');
+          
+          const fullName = session.user?.user_metadata?.full_name || 'Guru';
+          const initial = fullName.charAt(0).toUpperCase();
+          
+          document.getElementById('user-name').innerText = fullName;
+          document.getElementById('user-initial').innerText = initial;
+        } else {
+          isUserLoggedIn = false;
+          currentSession = null; 
+          if(btnLogin) btnLogin.classList.remove('hidden');
+          if(userProfile) userProfile.classList.add('hidden');
+        }
+      });
+    } catch(err) {
+      console.warn("Supabase auth error:", err);
+      isSupabaseDisabled = true;
+    }
+
+    // DAFTAR APLIKASI YANG BEBAS DIBUKA LANGSUNG TANPA TERHALANG GEMBOK
     const UNLOCKED_URLS = [
       'sdit-qurratu-ayun-maros.vercel.app',
       'sirekap.vercel.app',
@@ -320,22 +326,20 @@
       const clickedCard = e.target.closest('section a');
       
       if (clickedCard) {
-        // Jika mengeklik tombol "Baca selengkapnya", abaikan (jangan pindah halaman)
         if (e.target.tagName === 'SPAN' && e.target.getAttribute('onclick')?.includes('toggleDesc')) {
           return;
         }
 
         const href = clickedCard.href;
-        
-        // Periksa apakah aplikasi berada di dalam daftar BEBAS DIBUKA (Unlocked)
         const isUnlocked = UNLOCKED_URLS.some(url => href.includes(url));
 
-        if (isUnlocked) {
-          return; // Biarkan browser membuka link secara langsung tanpa terhalang gembok!
+        // JIKA APLIKASI BEBAS AKSES: Langsung buka!
+        if (isUnlocked || isSupabaseDisabled) {
+          return; 
         }
 
-        // Untuk aplikasi khusus yang mewajibkan login Google via Supabase:
         if (!isUserLoggedIn || !currentSession) {
+          // Jika belum login Google:
           e.preventDefault(); 
           alert("🔒 AKSES TERKUNCI!\n\nSilakan klik tombol 'Masuk' menggunakan akun Google Anda di pojok kanan atas terlebih dahulu.");
           return;
@@ -351,22 +355,27 @@
     });
 
     async function masukDenganGoogle() {
+      if (!_supabase || isSupabaseDisabled) {
+        alert("Sistem Autentikasi sedang tidak tersedia. Silakan klik langsung aplikasi yang ingin Anda akses.");
+        return;
+      }
       const { error } = await _supabase.auth.signInWithOAuth({
         provider: 'google',
         options: {
           redirectTo: window.location.origin 
         }
       });
-      if (error) console.error("Gagal masuk:", error.message);
+      if (error) {
+        alert("Gagal masuk: " + error.message);
+        console.error("Gagal masuk:", error.message);
+      }
     }
 
     async function keluarSistem() {
-      const { error } = await _supabase.auth.signOut();
-      if (error) {
-        console.error("Gagal keluar:", error.message);
-      } else {
-        window.location.reload();
+      if (_supabase) {
+        try { await _supabase.auth.signOut(); } catch(e) {}
       }
+      window.location.reload();
     }
 
     function toggleDesc(btnElement) {
