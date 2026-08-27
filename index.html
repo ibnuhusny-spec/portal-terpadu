@@ -13,12 +13,12 @@
     <!-- Navigasi -->
     <nav class="flex justify-between items-center p-6 max-w-7xl mx-auto">
       <div class="flex items-center gap-3">
-        <img src="logo.png" alt="Logo Sekolah" class="w-10 h-10 object-contain drop-shadow-sm">
+        <img src="logo.png" alt="Logo Sekolah" class="w-10 h-10 object-contain drop-shadow-sm" onerror="this.src='https://cdn-icons-png.flaticon.com/512/2997/2997235.png'">
         <div class="text-2xl font-bold tracking-tight text-slate-700">PortalTerpadu</div>
       </div>
       
       <div id="auth-area">
-        <button id="btn-login" onclick="masukDenganGoogle()" class="hidden flex items-center gap-2 bg-white px-5 py-2.5 rounded-full shadow-sm hover:shadow-md transition-all border border-slate-200">
+        <button id="btn-login" onclick="masukDenganGoogle()" class="hidden flex items-center gap-2 bg-white px-5 py-2.5 rounded-full shadow-sm hover:shadow-md transition-all border border-slate-200 cursor-pointer">
           <svg class="w-5 h-5 text-slate-600" viewBox="0 0 24 24" fill="currentColor">
             <path d="M12.24 10.285V14.4h6.806c-.275 1.765-2.056 5.174-6.806 5.174-4.095 0-7.439-3.389-7.439-7.574s3.345-7.574 7.439-7.574c2.33 0 3.891.989 4.785 1.849l3.254-3.138C18.189 1.186 15.479 0 12.24 0c-6.635 0-12 5.365-12 12s5.365 12 12 12c6.926 0 11.52-4.869 11.52-11.726 0-.788-.085-1.39-.189-1.989H12.24z"/>
           </svg>
@@ -29,7 +29,7 @@
           <div class="w-8 h-8 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center font-bold text-sm" id="user-initial">A</div>
           <span class="font-medium text-sm text-slate-700" id="user-name">Memuat...</span>
           <div class="w-px h-4 bg-slate-300 mx-1"></div>
-          <button onclick="keluarSistem()" class="text-sm text-red-500 hover:text-red-700 font-medium transition-colors">Keluar</button>
+          <button onclick="keluarSistem()" class="text-sm text-red-500 hover:text-red-700 font-medium transition-colors cursor-pointer">Keluar</button>
         </div>
       </div>
     </nav>
@@ -46,7 +46,7 @@
       </div>
       <div class="md:w-1/2">
         <div class="w-full h-72 bg-white/40 backdrop-blur-md rounded-[2rem] border border-white/60 shadow-xl overflow-hidden">
-          <img src="imagehero.png" alt="Ilustrasi Portal Terpadu" class="w-full h-full object-cover transition-transform hover:scale-105 duration-700">
+          <img src="imagehero.png" alt="Ilustrasi Portal Terpadu" class="w-full h-full object-cover transition-transform hover:scale-105 duration-700" onerror="this.style.display='none'">
         </div>
       </div>
     </header>
@@ -64,77 +64,67 @@
           <span onclick="event.preventDefault(); event.stopPropagation(); toggleDesc(this)" class="mt-4 text-sm font-bold text-indigo-200 hover:text-white cursor-pointer z-10 w-max">Baca selengkapnya ⏷</span>
         </a>
 
-        <!-- Administrasi & Data (Putih) -->
+        <!-- Administrasi & Data -->
         <a href="https://induk-ku-pro.vercel.app/login.html" target="_blank" class="bg-white rounded-3xl p-6 shadow-sm border border-slate-100 flex flex-col h-full hover:scale-[1.02] hover:shadow-md transition-all group">
-    <h3 class="text-xl font-bold mb-2 text-slate-800 group-hover:text-indigo-600 transition-colors">IndukKu Pro</h3>
-    
-    <div class="desc-content line-clamp-3 overflow-hidden transition-all duration-300 text-sm text-slate-500">
-        <p class="font-bold text-slate-700 mb-1">Manajemen Data Siswa 360° dalam Satu Genggaman</p>
-        <p class="mb-4">Tinggalkan cara manual yang merepotkan. IndukKu Pro adalah platform administrasi sekolah cerdas berbasis cloud yang dirancang khusus untuk mengelola biodata, rekapitulasi nilai, pencetakan rapor otomatis, hingga pengarsipan dokumen digital secara paperless, cepat, dan aman.</p>
-        
-        <p class="font-bold text-slate-700 mt-4 mb-2">🌟 Fitur Unggulan</p>
-        <ul class="list-disc pl-5 mb-4 space-y-1.5">
-            <li><strong>Profil Siswa 360°:</strong> Menampilkan biodata lengkap peserta didik, data orang tua/wali, hingga rekam jejak akademik dalam satu layar yang terintegrasi.</li>
-            <li><strong>Lemari Dokumen Digital:</strong> Brankas paperless canggih untuk mengunggah dan menyimpan berkas penting siswa (Kartu Keluarga, Akta Kelahiran, Ijazah) dalam format PDF atau Gambar. Tidak ada lagi cerita dokumen hilang atau rusak dimakan rayap.</li>
-            <li><strong>Mesin Cetak Rapor Otomatis:</strong> Mengubah data nilai, kehadiran, dan keputusan kenaikan kelas menjadi lembar biodata dan rapor resmi yang siap cetak hanya dengan satu kali klik.</li>
-            <li><strong>Dashboard Statistik Pintar:</strong> Memantau kondisi sekolah secara real-time melalui deretan kartu statistik dan grafik visual (Distribusi Kelas & Rasio Gender) yang bergerak otomatis.</li>
-            <li><strong>Kenaikan Kelas Massal:</strong> Mengelola mutasi naik kelas atau kelulusan ratusan siswa (Alumni) hanya dalam hitungan detik menggunakan satu tombol sakti bersandi.</li>
-            <li><strong>Integrasi & Ekspor Data:</strong> Dilengkapi fitur pencarian super cepat, serta kemudahan Export ke Excel dan Import dari format Dapodik maupun pendataan SPMB/PPDB.</li>
-        </ul>
-
-        <p class="font-bold text-slate-700 mt-4 mb-2">🚀 Mengapa Memilih IndukKu Pro?</p>
-        <ul class="list-disc pl-5 mb-2 space-y-1.5">
-            <li><strong>Berbasis Cloud Security:</strong> Menggunakan teknologi penyimpanan awan (Supabase) dengan standar keamanan tinggi. Data sekolah aman dan bisa diakses dari perangkat mana pun secara online.</li>
-            <li><strong>Antarmuka Modern & Cepat:</strong> Desain elegan yang sangat ramah pengguna (user-friendly), membuat guru dan tenaga administrasi (TU) bisa langsung mahir menggunakannya tanpa perlu pelatihan yang rumit.</li>
-            <li><strong>Sistem Satu Pintu:</strong> Menghapus entri data yang berulang. Mulai dari pendaftaran siswa baru hingga kelulusan, semuanya dikelola dalam satu alur yang rapi dan terstruktur.</li>
-            <li><strong>Menghemat Waktu & Biaya:</strong> Mengurangi penggunaan kertas (paperless), menghemat ruang penyimpanan fisik, dan memangkas waktu kerja guru secara drastis di setiap akhir semester.</li>
-        </ul>
-    </div>
-    
-    <span onclick="event.preventDefault(); event.stopPropagation(); toggleDesc(this)" class="mt-auto pt-4 text-xs font-bold text-indigo-600 hover:text-indigo-800 cursor-pointer z-10 w-max">Baca selengkapnya ⏷</span>
-</a>
+          <h3 class="text-xl font-bold mb-2 text-slate-800 group-hover:text-indigo-600 transition-colors">IndukKu Pro</h3>
+          <div class="desc-content line-clamp-3 overflow-hidden transition-all duration-300 text-sm text-slate-500">
+              <p class="font-bold text-slate-700 mb-1">Manajemen Data Siswa 360° dalam Satu Genggaman</p>
+              <p class="mb-4">Tinggalkan cara manual yang merepotkan. IndukKu Pro adalah platform administrasi sekolah cerdas berbasis cloud yang dirancang khusus untuk mengelola biodata, rekapitulasi nilai, pencetakan rapor otomatis, hingga pengarsipan dokumen digital secara paperless, cepat, dan aman.</p>
+              <p class="font-bold text-slate-700 mt-4 mb-2">🌟 Fitur Unggulan</p>
+              <ul class="list-disc pl-5 mb-4 space-y-1.5">
+                  <li><strong>Profil Siswa 360°:</strong> Menampilkan biodata lengkap peserta didik, data orang tua/wali, hingga rekam jejak akademik dalam satu layar yang terintegrasi.</li>
+                  <li><strong>Lemari Dokumen Digital:</strong> Brankas paperless canggih untuk mengunggah dan menyimpan berkas penting siswa (Kartu Keluarga, Akta Kelahiran, Ijazah) dalam format PDF atau Gambar. Tidak ada lagi cerita dokumen hilang atau rusak dimakan rayap.</li>
+                  <li><strong>Mesin Cetak Rapor Otomatis:</strong> Mengubah data nilai, kehadiran, dan keputusan kenaikan kelas menjadi lembar biodata dan rapor resmi yang siap cetak hanya dengan satu kali klik.</li>
+                  <li><strong>Dashboard Statistik Pintar:</strong> Memantau kondisi sekolah secara real-time melalui deretan kartu statistik dan grafik visual (Distribusi Kelas & Rasio Gender) yang bergerak otomatis.</li>
+                  <li><strong>Kenaikan Kelas Massal:</strong> Mengelola mutasi naik kelas atau kelulusan ratusan siswa (Alumni) hanya dalam hitungan detik menggunakan satu tombol sakti bersandi.</li>
+                  <li><strong>Integrasi & Ekspor Data:</strong> Dilengkapi fitur pencarian super cepat, serta kemudahan Export ke Excel dan Import dari format Dapodik maupun pendataan SPMB/PPDB.</li>
+              </ul>
+              <p class="font-bold text-slate-700 mt-4 mb-2">🚀 Mengapa Memilih IndukKu Pro?</p>
+              <ul class="list-disc pl-5 mb-2 space-y-1.5">
+                  <li><strong>Berbasis Cloud Security:</strong> Menggunakan teknologi penyimpanan awan (Supabase) dengan standar keamanan tinggi. Data sekolah aman dan bisa diakses dari perangkat mana pun secara online.</li>
+                  <li><strong>Antarmuka Modern & Cepat:</strong> Desain elegan yang sangat ramah pengguna (user-friendly), membuat guru dan tenaga administrasi (TU) bisa langsung mahir menggunakannya tanpa perlu pelatihan yang rumit.</li>
+                  <li><strong>Sistem Satu Pintu:</strong> Menghapus entri data yang berulang. Mulai dari pendaftaran siswa baru hingga kelulusan, semuanya dikelola dalam satu alur yang rapi dan terstruktur.</li>
+                  <li><strong>Menghemat Waktu & Biaya:</strong> Mengurangi penggunaan kertas (paperless), menghemat ruang penyimpanan fisik, dan memangkas waktu kerja guru secara drastis di setiap akhir semester.</li>
+              </ul>
+          </div>
+          <span onclick="event.preventDefault(); event.stopPropagation(); toggleDesc(this)" class="mt-auto pt-4 text-xs font-bold text-indigo-600 hover:text-indigo-800 cursor-pointer z-10 w-max">Baca selengkapnya ⏷</span>
+        </a>
 
         <a href="https://rencanaku-pro.vercel.app/" target="_blank" class="bg-white rounded-3xl p-6 shadow-sm border border-slate-100 flex flex-col h-full hover:scale-[1.02] hover:shadow-md transition-all group">
-  <h3 class="text-xl font-bold mb-2 text-slate-800 group-hover:text-indigo-600 transition-colors">RencanaKu Pro</h3>
-  <div class="desc-content line-clamp-3 overflow-hidden transition-all duration-300 text-sm text-slate-500">
-    <p class="font-semibold text-slate-700 mb-1">Asisten Cerdas Guru Modern</p>
-    <p class="mb-3">Platform penyusunan perangkat ajar berbasis kecerdasan buatan (AI) yang dirancang untuk memangkas waktu administrasi pendidik. Susun Rencana Pembelajaran Mendalam (Deep Learning) secara otomatis, presisi, dan profesional.</p>
-    
-    <p class="font-semibold text-slate-700 mb-2">✨ Keunggulan & Fitur Utama:</p>
-    <ul class="list-disc pl-4 space-y-1 mb-2">
-      <li><strong>Otomatisasi Cerdas:</strong> Menghasilkan skenario aktivitas pembelajaran yang utuh, bermakna, dan interaktif hanya dalam hitungan detik.</li>
-      <li><strong>Kelengkapan Sekali Klik:</strong> Mengotomatiskan pembuatan Modul Ajar, Rubrik Penilaian, LKPD, Instrumen Evaluasi, hingga Ringkasan Materi Ajar secara instan.</li>
-      <li><strong>Format Cetak Profesional:</strong> Tata letak rapi yang telah disesuaikan dengan standar sekolah, lengkap dengan dukungan logo ganda (Dinas & Instansi) yang siap cetak.</li>
-      <li><strong>Terintegrasi Cloud:</strong> Seluruh riwayat pembuatan RPP tersimpan aman secara otomatis dan dapat diakses kapan saja.</li>
-      <li><strong>Kustomisasi Fleksibel:</strong> Mendukung berbagai model pembelajaran, rentang kelas, hingga opsi penyematan dalil Al-Qur'an/Hadits secara otomatis untuk sekolah berbasis Islam.</li>
-    </ul>
-  </div>
-  <span onclick="event.preventDefault(); event.stopPropagation(); toggleDesc(this)" class="mt-auto pt-4 text-xs font-bold text-indigo-600 hover:text-indigo-800 cursor-pointer z-10 w-max">Baca selengkapnya ⏷</span>
-</a>
+          <h3 class="text-xl font-bold mb-2 text-slate-800 group-hover:text-indigo-600 transition-colors">RencanaKu Pro</h3>
+          <div class="desc-content line-clamp-3 overflow-hidden transition-all duration-300 text-sm text-slate-500">
+            <p class="font-semibold text-slate-700 mb-1">Asisten Cerdas Guru Modern</p>
+            <p class="mb-3">Platform penyusunan perangkat ajar berbasis kecerdasan buatan (AI) yang dirancang untuk memangkas waktu administrasi pendidik. Susun Rencana Pembelajaran Mendalam (Deep Learning) secara otomatis, presisi, dan profesional.</p>
+            <p class="font-semibold text-slate-700 mb-2">✨ Keunggulan & Fitur Utama:</p>
+            <ul class="list-disc pl-4 space-y-1 mb-2">
+              <li><strong>Otomatisasi Cerdas:</strong> Menghasilkan skenario aktivitas pembelajaran yang utuh, bermakna, dan interaktif hanya dalam hitungan detik.</li>
+              <li><strong>Kelengkapan Sekali Klik:</strong> Mengotomatiskan pembuatan Modul Ajar, Rubrik Penilaian, LKPD, Instrumen Evaluasi, hingga Ringkasan Materi Ajar secara instan.</li>
+              <li><strong>Format Cetak Profesional:</strong> Tata letak rapi yang telah disesuaikan dengan standar sekolah, lengkap dengan dukungan logo ganda (Dinas & Instansi) yang siap cetak.</li>
+              <li><strong>Terintegrasi Cloud:</strong> Seluruh riwayat pembuatan RPP tersimpan aman secara otomatis dan dapat diakses kapan saja.</li>
+              <li><strong>Kustomisasi Fleksibel:</strong> Mendukung berbagai model pembelajaran, rentang kelas, hingga opsi penyematan dalil Al-Qur'an/Hadits secara otomatis untuk sekolah berbasis Islam.</li>
+            </ul>
+          </div>
+          <span onclick="event.preventDefault(); event.stopPropagation(); toggleDesc(this)" class="mt-auto pt-4 text-xs font-bold text-indigo-600 hover:text-indigo-800 cursor-pointer z-10 w-max">Baca selengkapnya ⏷</span>
+        </a>
 
         <a href="https://roster-sd-admin.vercel.app/" target="_blank" class="bg-white rounded-3xl p-6 shadow-sm border border-slate-100 flex flex-col h-full hover:scale-[1.02] hover:shadow-md transition-all group">
-  <h3 class="text-xl font-bold mb-2 text-slate-800 group-hover:text-indigo-600 transition-colors">RosterKu Pro</h3>
-  
-  <div class="desc-content line-clamp-3 overflow-hidden transition-all duration-300 text-sm text-slate-500">
-    <p class="font-semibold text-slate-700 mb-2">Solusi Cerdas & Otomatis untuk Penjadwalan Sekolah</p>
-    
-    <p class="mb-3">RosterKu Pro adalah aplikasi manajemen jadwal pelajaran terpadu yang dirancang khusus untuk membebaskan pihak sekolah dari kerumitan penyusunan roster manual. Menggabungkan teknologi otomatisasi dengan antarmuka yang sangat mudah digunakan, aplikasi ini memastikan manajemen waktu kelas berjalan lebih cepat, terstruktur, dan bebas dari kesalahan.</p>
-    
-    <p class="font-semibold text-slate-700 mb-1">Fitur dan Keunggulan Utama:</p>
-    <ul class="list-disc pl-4 mb-3 space-y-1">
-      <li><strong>Pendeteksi Bentrok Otomatis:</strong> Sistem cerdas yang secara otomatis mencegah jadwal kelas atau guru saling bertabrakan, menghemat berjam-jam waktu evaluasi manual.</li>
-      <li><strong>Kapasitas Jadwal Ekstensif:</strong> Dirancang khusus untuk menampung kegiatan belajar yang padat, mampu mengatur siklus jadwal hingga 12 jam pelajaran per hari untuk berbagai kelas sekaligus tanpa kendala.</li>
-      <li><strong>Sistem Notifikasi Langsung (Native):</strong> Memiliki pengingat jadwal yang terintegrasi penuh dengan sistem perangkat Anda, memastikan tidak ada jam pelajaran atau perubahan yang terlewat.</li>
-      <li><strong>Akses Mobile Berbasis Android:</strong> Pantau dan kelola seluruh roster harian kapan saja dan di mana saja. Dikembangkan secara khusus menjadi aplikasi Android yang ringan dan siap mendampingi mobilitas Anda sehari-hari.</li>
-    </ul>
-    
-    <p>Tinggalkan cara lama yang menguras waktu dan tenaga. Dengan RosterKu Pro, tingkatkan efisiensi administrasi pendidikan dan nikmati kemudahan manajemen sekolah yang kini sepenuhnya ada dalam genggaman Anda!</p>
-  </div>
-  
-  <span onclick="event.preventDefault(); event.stopPropagation(); toggleDesc(this)" class="mt-auto pt-4 text-xs font-bold text-indigo-600 hover:text-indigo-800 cursor-pointer z-10 w-max">Baca selengkapnya ⏷</span>
-</a>
+          <h3 class="text-xl font-bold mb-2 text-slate-800 group-hover:text-indigo-600 transition-colors">RosterKu Pro</h3>
+          <div class="desc-content line-clamp-3 overflow-hidden transition-all duration-300 text-sm text-slate-500">
+            <p class="font-semibold text-slate-700 mb-2">Solusi Cerdas & Otomatis untuk Penjadwalan Sekolah</p>
+            <p class="mb-3">RosterKu Pro adalah aplikasi manajemen jadwal pelajaran terpadu yang dirancang khusus untuk membebaskan pihak sekolah dari kerumitan penyusunan roster manual. Menggabungkan teknologi otomatisasi dengan antarmuka yang sangat mudah digunakan, aplikasi ini memastikan manajemen waktu kelas berjalan lebih cepat, terstruktur, dan bebas dari kesalahan.</p>
+            <p class="font-semibold text-slate-700 mb-1">Fitur dan Keunggulan Utama:</p>
+            <ul class="list-disc pl-4 mb-3 space-y-1">
+              <li><strong>Pendeteksi Bentrok Otomatis:</strong> Sistem cerdas yang secara otomatis mencegah jadwal kelas atau guru saling bertabrakan, menghemat berjam-jam waktu evaluasi manual.</li>
+              <li><strong>Kapasitas Jadwal Ekstensif:</strong> Dirancang khusus untuk menampung kegiatan belajar yang padat, mampu mengatur siklus jadwal hingga 12 jam pelajaran per hari untuk berbagai kelas sekaligus tanpa kendala.</li>
+              <li><strong>Sistem Notifikasi Langsung (Native):</strong> Memiliki pengingat jadwal yang terintegrasi penuh dengan sistem perangkat Anda, memastikan tidak ada jam pelajaran atau perubahan yang terlewat.</li>
+              <li><strong>Akses Mobile Berbasis Android:</strong> Pantau dan kelola seluruh roster harian kapan saja dan di mana saja. Dikembangkan secara khusus menjadi aplikasi Android yang ringan dan siap mendampingi mobilitas Anda sehari-hari.</li>
+            </ul>
+            <p>Tinggalkan cara lama yang menguras waktu dan tenaga. Dengan RosterKu Pro, tingkatkan efisiensi administrasi pendidikan dan nikmati kemudahan manajemen sekolah yang kini sepenuhnya ada dalam genggaman Anda!</p>
+          </div>
+          <span onclick="event.preventDefault(); event.stopPropagation(); toggleDesc(this)" class="mt-auto pt-4 text-xs font-bold text-indigo-600 hover:text-indigo-800 cursor-pointer z-10 w-max">Baca selengkapnya ⏷</span>
+        </a>
 
-        <a href="https://lms-ku-pro.vercel.app" class="bg-slate-800 text-white rounded-3xl p-6 shadow-sm flex flex-col h-full hover:scale-[1.02] hover:shadow-md transition-all group">
+        <a href="https://lms-ku-pro.vercel.app" target="_blank" class="bg-slate-800 text-white rounded-3xl p-6 shadow-sm flex flex-col h-full hover:scale-[1.02] hover:shadow-md transition-all group">
           <h3 class="text-xl font-bold mb-4 group-hover:text-slate-300 transition-colors">LMSKu Pro</h3>
           <div class="desc-content line-clamp-3 overflow-hidden transition-all duration-300 text-sm text-slate-300">
             <p class="font-bold text-white mb-3">LMSKU PRO: Solusi Cerdas Kelas Virtual Anda</p>
@@ -149,46 +139,39 @@
           <span onclick="event.preventDefault(); event.stopPropagation(); toggleDesc(this)" class="mt-auto pt-4 text-xs font-bold text-indigo-400 hover:text-indigo-300 cursor-pointer z-10 w-max">Baca selengkapnya ⏷</span>
         </a>
 
-        <!-- Evaluasi & Pencatatan (Gelap Slate) -->
+        <!-- Evaluasi & Pencatatan -->
         <a href="https://sirekap.vercel.app/" target="_blank" class="bg-slate-800 text-white rounded-3xl p-6 shadow-sm flex flex-col h-full hover:scale-[1.02] hover:shadow-md transition-all group">
-  <h3 class="text-xl font-bold mb-2 group-hover:text-slate-300 transition-colors">SiRekap</h3>
-  
-  <div class="desc-content line-clamp-3 overflow-hidden transition-all duration-300 text-sm text-slate-300">
-    <strong class="text-slate-100">Sistem Informasi Rekapitulasi Digital Terpadu</strong><br>
-    SIREKAP adalah aplikasi berbasis web cerdas untuk memodernisasi pelaporan administrasi guru secara real-time, akurat, dan transparan. Aplikasi ini mengeliminasi rekapitulasi manual dengan sistem otomatisasi berbasis cloud database.<br><br>
-    
-    <strong class="text-slate-200">🚀 Fitur Keunggulan Utama:</strong>
-    <span class="block mt-2"><strong>🔐 Keamanan Berlapis:</strong> Proteksi ganda menggunakan PIN unik untuk guru dan password khusus untuk Kepala Sekolah/Admin (Aman dari manipulasi F12/Inspect Element).</span>
-    <span class="block mt-1"><strong>📅 Jurnal KBM Praktis:</strong> Pencatatan absen harian cepat yang otomatis memisahkan jam mengajar mandiri (👤 Sendiri), Team Teaching (👥 Team), hingga guru pengganti (Badal).</span>
-    <span class="block mt-1"><strong>📝 Modul Ujian Terperinci:</strong> Pelaporan khusus untuk aktivitas Mengawas, Menulis Soal, Periksa Soal, Ujian Praktik, dan Rapor yang terhitung otomatis berdasarkan volumenya.</span>
-    <span class="block mt-1"><strong>💰 Kalkulasi Honor Otomatis (Smart Payroll):</strong> Sistem cerdas yang otomatis mengalikan volume kerja guru dengan tarif dari yayasan, lengkap dengan fitur potongan otomatis 25% tanpa hitung manual.</span>
-    <span class="block mt-1"><strong>📊 Dashboard & Riwayat Transparan:</strong> Menampilkan rangkuman data Live dan grafik statistik akumulasi jam mengajar guru langsung dari server untuk menghindari duplikasi data.</span>
-    <span class="block mt-1"><strong>🗂️ Kelola Master Data Mudah:</strong> Menu admin khusus untuk menambah atau mengubah data Guru (beserta kodenya), Mapel, dan Kelas secara instan tanpa menyentuh database mentah.</span>
-  </div>
-  
-  <span onclick="event.preventDefault(); event.stopPropagation(); toggleDesc(this)" class="mt-auto pt-4 text-xs font-bold text-indigo-400 hover:text-indigo-300 cursor-pointer z-10 w-max">Baca selengkapnya ⏷</span>
-</a>
+          <h3 class="text-xl font-bold mb-2 group-hover:text-slate-300 transition-colors">SiRekap</h3>
+          <div class="desc-content line-clamp-3 overflow-hidden transition-all duration-300 text-sm text-slate-300">
+            <strong class="text-slate-100">Sistem Informasi Rekapitulasi Digital Terpadu</strong><br>
+            SIREKAP adalah aplikasi berbasis web cerdas untuk memodernisasi pelaporan administrasi guru secara real-time, akurat, dan transparan. Aplikasi ini mengeliminasi rekapitulasi manual dengan sistem otomatisasi berbasis cloud database.<br><br>
+            <strong class="text-slate-200">🚀 Fitur Keunggulan Utama:</strong>
+            <span class="block mt-2"><strong>🔐 Keamanan Berlapis:</strong> Proteksi ganda menggunakan PIN unik untuk guru dan password khusus untuk Kepala Sekolah/Admin (Aman dari manipulasi F12/Inspect Element).</span>
+            <span class="block mt-1"><strong>📅 Jurnal KBM Praktis:</strong> Pencatatan absen harian cepat yang otomatis memisahkan jam mengajar mandiri (👤 Sendiri), Team Teaching (👥 Team), hingga guru pengganti (Badal).</span>
+            <span class="block mt-1"><strong>📝 Modul Ujian Terperinci:</strong> Pelaporan khusus untuk aktivitas Mengawas, Menulis Soal, Periksa Soal, Ujian Praktik, dan Rapor yang terhitung otomatis berdasarkan volumenya.</span>
+            <span class="block mt-1"><strong>💰 Kalkulasi Honor Otomatis (Smart Payroll):</strong> Sistem cerdas yang otomatis mengalikan volume kerja guru dengan tarif dari yayasan, lengkap dengan fitur potongan otomatis 25% tanpa hitung manual.</span>
+            <span class="block mt-1"><strong>📊 Dashboard & Riwayat Transparan:</strong> Menampilkan rangkuman data Live dan grafik statistik akumulasi jam mengajar guru langsung dari server untuk menghindari duplikasi data.</span>
+            <span class="block mt-1"><strong>🗂️ Kelola Master Data Mudah:</strong> Menu admin khusus untuk menambah atau mengubah data Guru (beserta kodenya), Mapel, dan Kelas secara instan tanpa menyentuh database mentah.</span>
+          </div>
+          <span onclick="event.preventDefault(); event.stopPropagation(); toggleDesc(this)" class="mt-auto pt-4 text-xs font-bold text-indigo-400 hover:text-indigo-300 cursor-pointer z-10 w-max">Baca selengkapnya ⏷</span>
+        </a>
 
         <a href="https://soal-ku-pro.vercel.app/" target="_blank" class="bg-slate-800 text-white rounded-3xl p-6 shadow-sm flex flex-col h-full hover:scale-[1.02] hover:shadow-md transition-all group">
-  <h3 class="text-xl font-bold mb-2 group-hover:text-slate-300 transition-colors">SoalKu Pro</h3>
-  
-  <div class="desc-content line-clamp-3 overflow-hidden transition-all duration-300 text-sm text-slate-300">
-    <p class="mb-3"><strong>Generator Evaluasi Pembelajaran Berbasis AI</strong></p>
-    <p class="mb-3">Selamat datang di SoalKu Pro, asisten digital cerdas yang dirancang khusus untuk membebaskan pendidik dari kerumitan administrasi. Hanya dalam hitungan detik, aplikasi ini mampu merancang naskah ujian, kunci jawaban, hingga kisi-kisi secara otomatis dan presisi.</p>
-    
-    <p class="font-bold mb-2">✨ Fitur Unggulan SoalKu Pro:</p>
-    <ul class="list-disc pl-5 space-y-1 mb-3">
-      <li><strong>Penyusunan Berbasis AI:</strong> Otomatis merumuskan berbagai tipe soal yang disesuaikan dengan topik, kurikulum, dan pemetaan level kognitif (C1-C6).</li>
-      <li><strong>Ilustrasi Visual Pintar:</strong> Terintegrasi dengan mesin pencari cerdas yang otomatis menemukan dan menyisipkan gambar edukatif ke dalam naskah Anda.</li>
-      <li><strong>Ekspor Word Siap Cetak:</strong> Unduh paket ujian dalam format dokumen Word yang rapi, lengkap dengan Kop Surat sekolah dan dukungan teks Arab berharakat sempurna.</li>
-      <li><strong>Mode Kuis Interaktif:</strong> Sulap ruang kelas menjadi lebih hidup dengan menayangkan soal langsung ke proyektor melalui antarmuka kuis yang responsif.</li>
-    </ul>
-    
-    <p class="font-semibold italic">Fokuslah mengajar, biarkan SoalKu Pro yang menyusun evaluasinya!</p>
-  </div>
-  
-  <span onclick="event.preventDefault(); event.stopPropagation(); toggleDesc(this)" class="mt-auto pt-4 text-xs font-bold text-indigo-400 hover:text-indigo-300 cursor-pointer z-10 w-max">Baca selengkapnya ⏷</span>
-</a>
+          <h3 class="text-xl font-bold mb-2 group-hover:text-slate-300 transition-colors">SoalKu Pro</h3>
+          <div class="desc-content line-clamp-3 overflow-hidden transition-all duration-300 text-sm text-slate-300">
+            <p class="mb-3"><strong>Generator Evaluasi Pembelajaran Berbasis AI</strong></p>
+            <p class="mb-3">Selamat datang di SoalKu Pro, asisten digital cerdas yang dirancang khusus untuk membebaskan pendidik dari kerumitan administrasi. Hanya dalam hitungan detik, aplikasi ini mampu merancang naskah ujian, kunci jawaban, hingga kisi-kisi secara otomatis dan presisi.</p>
+            <p class="font-bold mb-2">✨ Fitur Unggulan SoalKu Pro:</p>
+            <ul class="list-disc pl-5 space-y-1 mb-3">
+              <li><strong>Penyusunan Berbasis AI:</strong> Otomatis merumuskan berbagai tipe soal yang disesuaikan dengan topik, kurikulum, dan pemetaan level kognitif (C1-C6).</li>
+              <li><strong>Ilustrasi Visual Pintar:</strong> Terintegrasi dengan mesin pencari cerdas yang otomatis menemukan dan menyisipkan gambar edukatif ke dalam naskah Anda.</li>
+              <li><strong>Ekspor Word Siap Cetak:</strong> Unduh paket ujian dalam format dokumen Word yang rapi, lengkap dengan Kop Surat sekolah dan dukungan teks Arab berharakat sempurna.</li>
+              <li><strong>Mode Kuis Interaktif:</strong> Sulap ruang kelas menjadi lebih hidup dengan menayangkan soal langsung ke proyektor melalui antarmuka kuis yang responsif.</li>
+            </ul>
+            <p class="font-semibold italic">Fokuslah mengajar, biarkan SoalKu Pro yang menyusun evaluasinya!</p>
+          </div>
+          <span onclick="event.preventDefault(); event.stopPropagation(); toggleDesc(this)" class="mt-auto pt-4 text-xs font-bold text-indigo-400 hover:text-indigo-300 cursor-pointer z-10 w-max">Baca selengkapnya ⏷</span>
+        </a>
 
         <a href="https://poinqa.vercel.app/" target="_blank" class="bg-slate-800 text-white rounded-3xl p-6 shadow-sm flex flex-col h-full hover:scale-[1.02] hover:shadow-md transition-all group">
           <h3 class="text-xl font-bold mb-4 group-hover:text-slate-300 transition-colors border-b border-slate-700 pb-2">PoinKu Pro</h3>
@@ -209,7 +192,7 @@
           <span onclick="event.preventDefault(); event.stopPropagation(); toggleDesc(this)" class="mt-auto pt-4 text-xs font-bold text-indigo-400 hover:text-indigo-300 cursor-pointer z-10 w-max">Baca selengkapnya ⏷</span>
         </a>
 
-        <!-- Agama & Gamifikasi (Hijau Teal & Amber) -->
+        <!-- Agama & Gamifikasi -->
         <a href="https://tahfizh-ku-pro.vercel.app/" target="_blank" class="bg-teal-600 text-white rounded-3xl p-6 shadow-sm flex flex-col h-full hover:scale-[1.02] hover:shadow-md transition-all group">
           <h3 class="text-xl font-bold mb-4 group-hover:text-teal-200 transition-colors">TahfizhKu Pro</h3>
           <div class="desc-content line-clamp-3 overflow-hidden transition-all duration-300 text-sm text-teal-50">
@@ -276,14 +259,6 @@
           </div>
           <span onclick="event.preventDefault(); event.stopPropagation(); toggleDesc(this)" class="mt-auto pt-4 text-xs font-bold text-amber-200 hover:text-white cursor-pointer z-10 w-max">Baca selengkapnya ⏷</span>
         </a>
-        </div>
-    </div>
-    <!-- WADAH PENYINGKAT TEKS BERAKHIR DI SINI -->
-    
-    <!-- Tombol Baca Selengkapnya -->
-    <span onclick="event.preventDefault(); event.stopPropagation(); toggleDesc(this)" class="mt-auto pt-4 text-xs font-bold text-amber-200 hover:text-white cursor-pointer z-10 w-max">Baca selengkapnya ⏷</span>
-    
-</a>
 
       </div>
     </section>
@@ -295,19 +270,20 @@
 
   </div>
 
-  <!-- MESIN SUPABASE (V2) - SOLUSI FINAL ANTI-BLOKIR iPHONE -->
+  <!-- MESIN SUPABASE (V2) -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   
   <script>
+    // URL dan KUNCI ANON SUPABASE RESMI
     const supabaseUrl = 'https://duyxtgpkzebmhlouwofl.supabase.co'; 
-    // !!! MASUKKAN KUNCI PUBLISHABLE ANDA DI BAWAH INI !!!
-    const supabaseKey = 'sb_publishable_djX-__X2opNMCa3yRU6BdQ_67lqy2Yq'; 
+    const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImR1eXh0Z3BremVibWhsb3V3b2ZsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODcwOTk4OTcsImV4cCI6MjEwMjY3NTg5N30.F_-Uyvm2Vu0eVJBBq8bJ7BGeg7Rn_ZaoHvSvxHqZ3yo';
     
     const _supabase = supabase.createClient(supabaseUrl, supabaseKey);
 
     let isUserLoggedIn = false;
     let currentSession = null; 
 
+    // Pantau Status Autentikasi Google
     _supabase.auth.onAuthStateChange((event, session) => {
       const btnLogin = document.getElementById('btn-login');
       const userProfile = document.getElementById('user-profile');
@@ -315,10 +291,10 @@
       if (session) {
         isUserLoggedIn = true;
         currentSession = session; 
-        btnLogin.classList.add('hidden');
-        userProfile.classList.remove('hidden');
+        if(btnLogin) btnLogin.classList.add('hidden');
+        if(userProfile) userProfile.classList.remove('hidden');
         
-        const fullName = session.user.user_metadata.full_name || 'Guru';
+        const fullName = session.user?.user_metadata?.full_name || 'Guru';
         const initial = fullName.charAt(0).toUpperCase();
         
         document.getElementById('user-name').innerText = fullName;
@@ -326,35 +302,51 @@
       } else {
         isUserLoggedIn = false;
         currentSession = null; 
-        btnLogin.classList.remove('hidden');
-        userProfile.classList.add('hidden');
+        if(btnLogin) btnLogin.classList.remove('hidden');
+        if(userProfile) userProfile.classList.add('hidden');
       }
     });
+
+    // LIST APLIKASI YANG BEBAS DIBUKA TANPA GEMBOK LOGIN SUPABASE
+    const UNLOCKED_URLS = [
+      'sdit-qurratu-ayun-maros.vercel.app',
+      'sirekap.vercel.app',
+      'tahfizh-ku-pro.vercel.app',
+      'ramadanku.vercel.app',
+      'jawarasusunkata.vercel.app'
+    ];
 
     document.addEventListener('click', function(e) {
       const clickedCard = e.target.closest('section a');
       
       if (clickedCard) {
-        e.preventDefault(); 
-
-        // 1. Web Sekolah bebas diakses (berpindah di tab yang sama)
-        if (clickedCard.href.includes('sdit-qurratu-ayun-maros.vercel.app')) {
-          window.location.href = clickedCard.href;
+        // Jika mengeklik tombol "Baca selengkapnya", abaikan (jangan pindah halaman)
+        if (e.target.tagName === 'SPAN' && e.target.getAttribute('onclick')?.includes('toggleDesc')) {
           return;
         }
 
-        // 2. Jika belum login, munculkan peringatan
+        const href = clickedCard.href;
+        
+        // Periksa apakah aplikasi berada di dalam daftar BEBAS DIBUKA (Unlocked)
+        const isUnlocked = UNLOCKED_URLS.some(url => href.includes(url));
+
+        if (isUnlocked) {
+          return; // Biarkan browser membuka link secara langsung tanpa terhalang gembok!
+        }
+
+        // Untuk aplikasi khusus yang mewajibkan login Google via Supabase:
         if (!isUserLoggedIn || !currentSession) {
+          e.preventDefault(); 
           alert("🔒 AKSES TERKUNCI!\n\nSilakan klik tombol 'Masuk' menggunakan akun Google Anda di pojok kanan atas terlebih dahulu.");
           return;
         }
 
-        // 3. Rakit kunci lalu pindah halaman di tab yang sama (Dijamin lolos dari blokir iPhone)
-        const targetUrl = new URL(clickedCard.href);
-        targetUrl.hash = `access_token=${currentSession.access_token}&refresh_token=${currentSession.refresh_token}&expires_in=${currentSession.expires_in}&token_type=${currentSession.token_type}`;
-        
-        // Pindah halaman dengan aman!
-        window.location.href = targetUrl.toString();
+        if (currentSession) {
+          e.preventDefault();
+          const targetUrl = new URL(href);
+          targetUrl.hash = `access_token=${currentSession.access_token}&refresh_token=${currentSession.refresh_token}&expires_in=${currentSession.expires_in}&token_type=${currentSession.token_type}`;
+          window.location.href = targetUrl.toString();
+        }
       }
     });
 
@@ -377,13 +369,12 @@
       }
     }
 
-    // FUNGSI BARU: Untuk membuka/menutup teks panjang tanpa memicu perpindahan halaman
     function toggleDesc(btnElement) {
       const content = btnElement.previousElementSibling;
-      if (content.classList.contains('line-clamp-3')) {
+      if (content && content.classList.contains('line-clamp-3')) {
         content.classList.remove('line-clamp-3');
         btnElement.innerHTML = "Tutup deskripsi ⏶";
-      } else {
+      } else if (content) {
         content.classList.add('line-clamp-3');
         btnElement.innerHTML = "Baca selengkapnya ⏷";
       }
