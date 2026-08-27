@@ -274,13 +274,11 @@
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   
   <script>
-    // URL dan KUNCI ANON SUPABASE BARU (PROJECT FRESH)
     const supabaseUrl = 'https://ncvbbmyycjzdpudoueor.supabase.co'; 
     const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5jdmJibXl5Y2p6ZHB1ZG91ZW9yIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODc3NzMzOTYsImV4cCI6MjEwMzM0OTM5Nn0.DCo0AZRke_HN-TqDSt8aenKLqGTBzw4d4NNZTy3acJ4';
     
     let isUserLoggedIn = false;
     let currentSession = null; 
-    let isSupabaseDisabled = false;
     let _supabase = null;
 
     try {
@@ -309,56 +307,36 @@
         }
       });
     } catch(err) {
-      console.warn("Supabase auth error:", err);
-      isSupabaseDisabled = true;
+      console.warn("Supabase auth init error:", err);
     }
 
-    // DAFTAR APLIKASI YANG BEBAS DIBUKA LANGSUNG TANPA TERHALANG GEMBOK
-    const UNLOCKED_URLS = [
-      'sdit-qurratu-ayun-maros.vercel.app',
-      'sirekap.vercel.app',
-      'tahfizh-ku-pro.vercel.app',
-      'ramadanku.vercel.app',
-      'jawarasusunkata.vercel.app'
-    ];
-
+    // MODE AKSES: SEMUA APLIKASI BISA DIBAKA LANGSUNG TANPA MENGUNCI GURU/PENGGUNA
     document.addEventListener('click', function(e) {
       const clickedCard = e.target.closest('section a');
       
       if (clickedCard) {
+        // Abaikan tombol "Baca selengkapnya" agar hanya membuka/menutup deskripsi
         if (e.target.tagName === 'SPAN' && e.target.getAttribute('onclick')?.includes('toggleDesc')) {
           return;
         }
 
         const href = clickedCard.href;
-        const isUnlocked = UNLOCKED_URLS.some(url => href.includes(url));
 
-        // JIKA APLIKASI BEBAS AKSES: Langsung buka!
-        if (isUnlocked || isSupabaseDisabled) {
-          return; 
-        }
-
-        if (!isUserLoggedIn || !currentSession) {
-          // Jika belum login Google:
-          e.preventDefault(); 
-          alert("🔒 AKSES TERKUNCI!\n\nSilakan klik tombol 'Masuk' menggunakan akun Google Anda di pojok kanan atas terlebih dahulu.");
-          return;
-        }
-
-        if (currentSession) {
+        // Jika user sudah login Google, sertakan token ke URL (jika aplikasi butuh)
+        if (_supabase && currentSession) {
           e.preventDefault();
           const targetUrl = new URL(href);
           targetUrl.hash = `access_token=${currentSession.access_token}&refresh_token=${currentSession.refresh_token}&expires_in=${currentSession.expires_in}&token_type=${currentSession.token_type}`;
           window.location.href = targetUrl.toString();
+        } else {
+          // Jika belum login Google, BIARKAN BROWSER MEMBUKA APLIKASI SECARA LANGSUNG (Tidak Dikunci!)
+          return; 
         }
       }
     });
 
     async function masukDenganGoogle() {
-      if (!_supabase || isSupabaseDisabled) {
-        alert("Sistem Autentikasi sedang tidak tersedia. Silakan klik langsung aplikasi yang ingin Anda akses.");
-        return;
-      }
+      if (!_supabase) return;
       const { error } = await _supabase.auth.signInWithOAuth({
         provider: 'google',
         options: {
@@ -366,8 +344,11 @@
         }
       });
       if (error) {
-        alert("Gagal masuk: " + error.message);
-        console.error("Gagal masuk:", error.message);
+        if (error.message.includes('provider is not enabled')) {
+          alert("Petunjuk: Provider Google Authentication di Supabase Dashboard belum di-Enable.\n\nNamun tidak perlu khawatir, SEMUA APLIKASI di Portal Terpadu saat ini sudah dapat Anda buka dan gunakan secara langsung!");
+        } else {
+          alert("Gagal masuk: " + error.message);
+        }
       }
     }
 
